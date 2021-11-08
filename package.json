@@ -1,0 +1,24 @@
+{
+  "name": "plain-chart",
+  "version": "0.1.0-alpha.0",
+  "description": "一个比 Apache ECharts 更简单的开源可视化图表库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clunch-contrib/chart.git"
+  },
+  "keywords": [
+    "chart",
+    "clunch",
+    "easy"
+  ],
+  "author": "你好2007",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clunch-contrib/chart/issues"
+  },
+  "homepage": "https://github.com/clunch-contrib/chart#readme"
+}
