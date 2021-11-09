@@ -1,0 +1,53 @@
+<template>
+    <div class='doc-view'>
+        <header>
+            安装
+        </header>
+        <p>
+            首先你需要通过命令行安装，就像这样：
+        </p>
+        <pre q-code>
+            npm install --save plain-chart
+    </pre>
+        <p>
+            安装好了以后，直接引入即可使用：
+        </p>
+        <pre q-code>
+        import PlainChart from 'plain-chart';
+    </pre>
+        <p>
+            或
+        </p>
+        <pre q-code:html>
+            <script src='https://cdn.jsdelivr.net/npm/plain-chart@0'></script>
+        </pre>
+        <header>
+            版本
+        </header>
+        <p>
+            如果在使用的时候，发现文档中有的方法无法使用，可能是你的版本过低导致的，你可以
+            <a href="https://github.com/clunch-contrib/chart/blob/master/CHANGELOG" target="_blank"
+                class='link'>点击此处</a>
+            查看版本日志。
+        </p>
+        <header>
+            建议
+        </header>
+        <p>
+            由于项目的建立是来自日常工作的需求，如果你希望下一版本提供新的功能，可以提
+            <a href="https://github.com/clunch-contrib/chart/issues" target="_blank" class='link'>issue</a>
+            告知我们！
+        </p>
+    </div>
+</template>
+<style>
+    [quickpaper] {
+        height: calc(100vh - 60px);
+        overflow: auto;
+
+        &>div {
+            width: 670px;
+            margin: auto;
+        }
+    }
+</style>

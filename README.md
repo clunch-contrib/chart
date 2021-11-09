@@ -14,6 +14,10 @@
 ## Issues
 使用的时候遇到任何问题或有好的建议，请点击进入[issue](https://github.com/clunch-contrib/chart/issues)，欢迎参与维护！
 
+## How to use?
+
+具体的使用你可以[查阅文档](https://clunch-contrib.github.io/chart/)哦~
+
 开源协议
 ---------------------------------------
 [MIT](https://github.com/clunch-contrib/chart/blob/master/LICENSE)
