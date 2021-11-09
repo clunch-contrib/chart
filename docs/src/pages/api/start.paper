@@ -39,7 +39,7 @@ PlainChart(function (options, serieslist) {
         <a href="https://hai2007.gitee.io/clunch" target="_blank" class='link'>框架clunch</a>
         是跨平台的，因此，本项目的跨平台和其保持一致。
     </p>
-    <h3 id='fixed-platform-uni-app'>
+    <h3 id='fixed-uni-app'>
         uni-app
     </h3>
     <p>
@@ -79,7 +79,7 @@ PlainChart(function (options, serieslist) {
     });
 }).then(myChart => {});
     </pre>
-    <h3 id='fixed-platform-weixin'>
+    <h3 id='fixed-weixin'>
         微信小程序
     </h3>
     <p>

@@ -9,7 +9,7 @@
  * Copyright (c) 2021 hai2007 走一步，再走一步。
  * Released under the MIT license
  *
- * Date:Tue Nov 09 2021 15:50:54 GMT+0800 (中国标准时间)
+ * Date:Tue Nov 09 2021 16:13:55 GMT+0800 (中国标准时间)
  */
 (function () {
   'use strict';
@@ -36,11 +36,78 @@
     console.log(clunch);
   }
 
+  var bar = ['number', function ($number) {
+    return {
+      attrs: {},
+      region: {
+        "default": function _default(render, attr) {}
+      },
+      link: function link(painter, attr) {}
+    };
+  }];
+
+  var line = ['number', function ($number) {
+    return {
+      attrs: {},
+      region: {
+        "default": function _default(render, attr) {}
+      },
+      link: function link(painter, attr) {}
+    };
+  }];
+
+  var pie = ['number', function ($number) {
+    return {
+      attrs: {},
+      region: {
+        "default": function _default(render, attr) {}
+      },
+      link: function link(painter, attr) {}
+    };
+  }];
+
+  var xRuler = ['number', function ($number) {
+    return {
+      attrs: {},
+      region: {
+        "default": function _default(render, attr) {}
+      },
+      link: function link(painter, attr) {}
+    };
+  }];
+
+  var yRuler = ['number', function ($number) {
+    return {
+      attrs: {},
+      region: {
+        "default": function _default(render, attr) {}
+      },
+      link: function link(painter, attr) {}
+    };
+  }];
+
+  var hover = ['number', function ($number) {
+    return {
+      attrs: {},
+      region: {
+        "default": function _default(render, attr) {}
+      },
+      link: function link(painter, attr) {}
+    };
+  }];
+
   var PlainChart = function PlainChart(init) {
     return new Promise(function (resolve) {
       init({
         render: image
-      }, {}).then(function (clunch) {
+      }, {
+        'plain-chart-bar': bar,
+        'plain-chart-line': line,
+        'plain-chart-pie': pie,
+        'plain-chart-x-ruler': xRuler,
+        'plain-chart-y-ruler': yRuler,
+        'plain-chart-hover': hover
+      }).then(function (clunch) {
         resolve(chart(clunch));
       });
     });
