@@ -9,7 +9,7 @@
  * Copyright (c) 2021 hai2007 走一步，再走一步。
  * Released under the MIT license
  *
- * Date:Tue Nov 09 2021 10:43:32 GMT+0800 (中国标准时间)
+ * Date:Tue Nov 09 2021 15:50:54 GMT+0800 (中国标准时间)
  */
 (function () {
   'use strict';
@@ -30,7 +30,22 @@
     return _typeof(obj);
   }
 
-  var PlainChart = {}; // 判断当前环境，如果不是浏览器环境
+  var image = [];
+
+  function chart (clunch) {
+    console.log(clunch);
+  }
+
+  var PlainChart = function PlainChart(init) {
+    return new Promise(function (resolve) {
+      init({
+        render: image
+      }, {}).then(function (clunch) {
+        resolve(chart(clunch));
+      });
+    });
+  }; // 判断当前环境，如果不是浏览器环境
+
 
   if ((typeof module === "undefined" ? "undefined" : _typeof(module)) === "object" && _typeof(module.exports) === "object") {
     module.exports = PlainChart;

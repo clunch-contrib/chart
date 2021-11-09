@@ -16,6 +16,13 @@ div.doc-view {
     &>h2 {
         font-size: 18px;
     }
+
+    .warn {
+        color: #030303;
+        font-weight: 800;
+        padding: 0 2px;
+        font-size: 12px;
+    }
 }
 
 .link {

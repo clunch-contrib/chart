@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试</title>
+    <script src="../node_modules/clunch/dist/clunch.js"></script>
+    <script src="../dist/plain-chart.js"></script>
+    <style>
+        #canvas {
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id='canvas'></div>
+
+    <script>
+
+        PlainChart(function (options, serieslist) {
+            return new Promise(resolve => {
+
+                // 注册组件
+                Clunch.series(serieslist);
+
+                // 创建对象
+                options.el = document.getElementById('canvas');
+                let clunch = new Clunch(options);
+
+                // 标记已解决
+                resolve(clunch);
+
+            });
+        }).then(myChart => {
+
+            console.log(myChart);
+
+        });
+
+    </script>
+
+</body>
+
+</html>

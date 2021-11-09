@@ -2,5 +2,162 @@
     <header id='fixed-top'>
         开始使用
     </header>
+    <p>
+        首先，我们以web端为例，在使用前，你需要首先创建
+        <span class="important">图表对象</span>
+        ：
+    </p>
+    <pre q-code>
+PlainChart(function (options, serieslist) {
+    return new Promise(resolve => {
 
+        // 第一步：注册组件
+        Clunch.series(serieslist);
+
+        // 第二步：创建对象
+        options.el = document.getElementById('canvas');
+        let clunch = new Clunch(options);
+
+        // 第三步：标记已解决
+        resolve(clunch);
+
+    });
+}).then(myChart => {
+
+    // myChart就是完成了初始化的图表对象
+
+});
+    </pre>
+    <p>
+        <span class="important">图表对象</span>上有很多方法，使用上面的方法，就可以完成各种绘图等操作。
+    </p>
+    <h2 id='fixed-platform'>
+        兼容更多平台
+    </h2>
+    <p>
+        由于本库基于的
+        <a href="https://hai2007.gitee.io/clunch" target="_blank" class='link'>框架clunch</a>
+        是跨平台的，因此，本项目的跨平台和其保持一致。
+    </p>
+    <h3 id='fixed-platform-uni-app'>
+        uni-app
+    </h3>
+    <p>
+        首先，你需要引入uni-app组件，引入以后需要进行注册：
+    </p>
+    <pre q-code>
+import uiClunch from 'clunch/platform/uni-app/index.vue';
+
+export default {
+    components:{
+        uiClunch
+    }
+};
+    </pre>
+    <p>
+        注册完毕就可以在页面中使用了：
+    </p>
+    <pre q-code='html'>
+        <ui-clunch ref='clunch' width='100vw' height='100vh-10px'></ui-clunch>
+    </pre>
+    <p class='warn'>
+        温馨提示：上面的宽、高属性支持常见的运算，除了数字外，还支持px、vh、vw和rpx等单位。
+    </p>
+    <p>
+        最后，进行初始化并获取<span class="important">图表对象</span>：
+    </p>
+    <pre q-code>
+PlainChart(function (options, serieslist) {
+    return new Promise(resolve => {
+
+        // 第一步：创建对象
+        let clunch = this.$refs.clunch.new(options,serieslist);
+
+        // 第二步：标记已解决
+        resolve(clunch);
+
+    });
+}).then(myChart => {});
+    </pre>
+    <h3 id='fixed-platform-weixin'>
+        微信小程序
+    </h3>
+    <p>
+        首先，你需要配置配置初始化命令：
+    </p>
+    <pre q-code>
+// package.json
+{
+    "init-clunch": "clunch --weixin ./ui-clunch"
+}
+    </pre>
+    <p>
+        然后执行一下：
+    </p>
+    <pre q-code>
+        npm run init-clunch
+    </pre>
+    <p>
+        接着，你还需要构建npm（通过在微信小程序开发工具界面的『工具』->『构建 npm』）。
+    </p>
+    <p>
+        然后注册组件：
+    </p>
+    <pre q-code>
+// page.json
+{
+    "usingComponents": {
+        "ui-clunch": "../../ui-clunch/index"
+    }
+}
+    </pre>
+    <p>
+        注册完毕就可以在页面中使用了：
+    </p>
+    <pre q-code='html'>
+        <ui-clunch id='clunch' width='200px' height='100px'></ui-clunch>
+    </pre>
+    <p class="warn">
+        温馨提示：上面的宽、高属性支持常见的运算，除了数字外，还支持px、vh、vw和rpx等单位。
+    </p>
+    <p>
+        同样的，最后，进行初始化并获取<span class="important">图表对象</span>：
+    </p>
+    <pre q-code>
+PlainChart(function (options, serieslist) {
+    return new Promise(resolve => {
+
+        // 第一步：创建对象
+        this.selectComponent('#clunch').new(options,serieslist,clunch=>{
+
+            // 第二步：标记已解决
+            resolve(clunch);
+
+        });
+
+    });
+}).then(myChart => {});
+    </pre>
+    <h2 id='fixed-issue'>
+        反馈
+    </h2>
+    <p class="important subtitle">
+        你也可以和我们一起做贡献！
+    </p>
+    <p>
+        我们的最终目的是兼容所有端，如果没有你需要的端，可以去
+        <a href="https://github.com/hai2007/clunch/issues" target="_blank" class='link'>clunch.js</a>
+        或
+        <a href="https://github.com/clunch-contrib/chart/issues" target="_blank" class='link'>本项目</a>
+        给我们提issue~
+    </p>
+    <p>
+        同时，非常欢迎你加入我们，参与项目的设计、开发和维护，成为长期稳定的贡献者，和我们保持密切的联系。最终，我们会带着初心矢志不渝的坚持维护，并永远保持自由、开源、讨论和进步。
+    </p>
 </template>
+<style>
+    .subtitle {
+        font-size: 18px;
+        text-indent: 0;
+    }
+</style>

@@ -10,17 +10,30 @@ module.exports = {
     pkg: '.',
 
     // 定义任务
-    task(nodejs, pkg, rootPath) {
+    task: {
+        compileTemplate(nodejs, pkg, rootPath) {
 
-        [
-            'plain-chart.js',
-            'plain-chart.min.js'
-        ].forEach(item => {
+            // 读取.clunch文件
+            let template = fs.readFileSync(nodejs.fullPath('./src/image.clunch', rootPath), 'utf-8');
 
-            let filePath = path.join(rootPath, "./dist/" + item);
+            // 解析成json
+            let render = require('clunch/loader.js')(template);
 
-            let banner =
-                `/*!
+            // 写入指定文件
+            fs.writeFileSync(nodejs.fullPath('./template.js', rootPath), render.trim(), 'utf-8');
+
+        },
+        default(nodejs, pkg, rootPath) {
+
+            [
+                'plain-chart.js',
+                'plain-chart.min.js'
+            ].forEach(item => {
+
+                let filePath = path.join(rootPath, "./dist/" + item);
+
+                let banner =
+                    `/*!
  * plain-chart - ${pkg.description}
  * ${pkg.repository.url}
  *
@@ -34,10 +47,11 @@ module.exports = {
  * Date:${new Date()}
  */`;
 
-            fs.writeFileSync(filePath, banner + "\n" + fs.readFileSync(filePath));
+                fs.writeFileSync(filePath, banner + "\n" + fs.readFileSync(filePath));
 
-        });
+            })
 
+        }
     }
 
 };
