@@ -22,25 +22,31 @@
 
     <script>
 
-        PlainChart(function (options, serieslist) {
-            return new Promise(resolve => {
+        // 跨端方法
+        // PlainChart(function (options, serieslist) {
+        //     return new Promise(resolve => {
 
-                // 注册组件
-                Clunch.series(serieslist);
+        //         // 注册组件
+        //         Clunch.series(serieslist);
 
-                // 创建对象
-                options.el = document.getElementById('canvas');
-                let clunch = new Clunch(options);
+        //         // 创建对象
+        //         options.el = document.getElementById('canvas');
+        //         let clunch = new Clunch(options);
 
-                // 标记已解决
-                resolve(clunch);
+        //         // 标记已解决
+        //         resolve(clunch);
 
-            });
-        }).then(myChart => {
+        //     });
+        // }).then(myChart => {
 
-            console.log(myChart);
+        //     console.log(myChart);
 
-        });
+        // });
+
+        // H5独有
+        var myChart = PlainChart.init(Clunch, document.getElementById('canvas'));
+        console.log(myChart);
+
 
     </script>
 

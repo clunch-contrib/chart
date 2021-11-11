@@ -9,7 +9,7 @@
  * Copyright (c) 2021 hai2007 走一步，再走一步。
  * Released under the MIT license
  *
- * Date:Tue Nov 09 2021 16:13:55 GMT+0800 (中国标准时间)
+ * Date:Thu Nov 11 2021 15:10:09 GMT+0800 (中国标准时间)
  */
 (function () {
   'use strict';
@@ -34,6 +34,7 @@
 
   function chart (clunch) {
     console.log(clunch);
+    return '未完成';
   }
 
   var bar = ['number', function ($number) {
@@ -96,21 +97,33 @@
     };
   }];
 
+  var serieslist = {
+    'plain-chart-bar': bar,
+    'plain-chart-line': line,
+    'plain-chart-pie': pie,
+    'plain-chart-x-ruler': xRuler,
+    'plain-chart-y-ruler': yRuler,
+    'plain-chart-hover': hover
+  };
+  var options = {
+    render: image
+  }; // 为跨端提供
+
   var PlainChart = function PlainChart(init) {
     return new Promise(function (resolve) {
-      init({
-        render: image
-      }, {
-        'plain-chart-bar': bar,
-        'plain-chart-line': line,
-        'plain-chart-pie': pie,
-        'plain-chart-x-ruler': xRuler,
-        'plain-chart-y-ruler': yRuler,
-        'plain-chart-hover': hover
-      }).then(function (clunch) {
+      init(options, serieslist).then(function (clunch) {
         resolve(chart(clunch));
       });
     });
+  }; // H5独有
+
+
+  PlainChart.init = function (Clunch, el) {
+    // 注册组件
+    Clunch.series(serieslist); // 创建对象并生成图表对象
+
+    options.el = el;
+    return chart(new Clunch(options));
   }; // 判断当前环境，如果不是浏览器环境
 
 

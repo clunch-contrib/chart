@@ -9,21 +9,38 @@ import xRuler from './series/x-ruler';
 import yRuler from './series/y-ruler.js';
 import hover from './series/hover';
 
+let serieslist = {
+    'plain-chart-bar': bar,
+    'plain-chart-line': line,
+    'plain-chart-pie': pie,
+    'plain-chart-x-ruler': xRuler,
+    'plain-chart-y-ruler': yRuler,
+    'plain-chart-hover': hover
+};
+
+let options = {
+    render: image
+};
+
+// 为跨端提供
 let PlainChart = init => {
     return new Promise(resolve => {
-        init({
-            render: image
-        }, {
-            'plain-chart-bar': bar,
-            'plain-chart-line': line,
-            'plain-chart-pie': pie,
-            'plain-chart-x-ruler': xRuler,
-            'plain-chart-y-ruler': yRuler,
-            'plain-chart-hover': hover
-        }).then(clunch => {
+        init(options, serieslist).then(clunch => {
             resolve(chart(clunch));
         });
     });
+};
+
+// H5独有
+PlainChart.init = function (Clunch, el) {
+
+    // 注册组件
+    Clunch.series(serieslist);
+
+    // 创建对象并生成图表对象
+    options.el = el;
+    return chart(new Clunch(options));
+
 };
 
 // 判断当前环境，如果不是浏览器环境

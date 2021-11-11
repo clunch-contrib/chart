@@ -8,25 +8,10 @@
         ：
     </p>
     <pre q-code>
-PlainChart(function (options, serieslist) {
-    return new Promise(resolve => {
+import Clunch from 'clunch';
 
-        // 第一步：注册组件
-        Clunch.series(serieslist);
-
-        // 第二步：创建对象
-        options.el = document.getElementById('canvas');
-        let clunch = new Clunch(options);
-
-        // 第三步：标记已解决
-        resolve(clunch);
-
-    });
-}).then(myChart => {
-
-    // myChart就是完成了初始化的图表对象
-
-});
+// myChart就是完成了初始化的图表对象(下同)
+let myChart = PlainChart.init(Clunch, document.getElementById('canvas'));
     </pre>
     <p>
         <span class="important">图表对象</span>上有很多方法，使用上面的方法，就可以完成各种绘图等操作。

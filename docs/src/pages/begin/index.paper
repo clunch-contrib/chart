@@ -7,8 +7,14 @@
             首先你需要通过命令行安装，就像这样：
         </p>
         <pre q-code>
-            npm install --save plain-chart
+            npm install --save plain-chart clunch
     </pre>
+        <p class='warn'>
+            （温馨提示：本项目的运行依赖
+            <a class='link' href="https://hai2007.gitee.io/clunch/" target="_blank">clunch</a>
+            框架，所以也需要安装。
+            ）
+        </p>
         <p>
             安装好了以后，直接引入即可使用：
         </p>
