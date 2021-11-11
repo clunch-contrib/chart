@@ -1,1 +1,1 @@
-export default [];
+export default [{"name":"group","attrs":{"c-for":"(option,order) in options"},"children":[]}];

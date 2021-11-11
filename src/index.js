@@ -19,7 +19,12 @@ let serieslist = {
 };
 
 let options = {
-    render: image
+    render: image,
+    data() {
+        return {
+            options: []
+        };
+    }
 };
 
 // 为跨端提供

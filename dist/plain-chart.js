@@ -9,7 +9,7 @@
  * Copyright (c) 2021 hai2007 走一步，再走一步。
  * Released under the MIT license
  *
- * Date:Thu Nov 11 2021 15:10:09 GMT+0800 (中国标准时间)
+ * Date:Thu Nov 11 2021 16:41:04 GMT+0800 (中国标准时间)
  */
 (function () {
   'use strict';
@@ -30,7 +30,7 @@
     return _typeof(obj);
   }
 
-  var image = [];
+  var image = [{"name":"group","attrs":{"c-for":"(option,order) in options"},"children":[]}];
 
   function chart (clunch) {
     console.log(clunch);
@@ -106,7 +106,12 @@
     'plain-chart-hover': hover
   };
   var options = {
-    render: image
+    render: image,
+    data: function data() {
+      return {
+        options: []
+      };
+    }
   }; // 为跨端提供
 
   var PlainChart = function PlainChart(init) {

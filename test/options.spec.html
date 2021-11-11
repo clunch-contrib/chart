@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../logo.png">
+    <title>对于各种图表，配置项如何设计？ | 测试</title>
+    <script src="../node_modules/clunch/dist/clunch.js"></script>
+    <script src="../dist/plain-chart.js"></script>
+    <style>
+        #canvas {
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id='canvas'></div>
+
+    <script>
+
+        var myChart = PlainChart.init(Clunch, document.getElementById('canvas'));
+        console.log(myChart);
+
+
+    </script>
+
+</body>
+
+</html>
