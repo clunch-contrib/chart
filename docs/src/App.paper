@@ -10,7 +10,10 @@
                 开始
             </span>
             <span @click='loadpage("api","no")' :active='url=="api"?"yes":"no"'>
-                文档
+                文档&教程
+            </span>
+            <span @click='loadpage("examples","no")' :active='url=="examples"?"yes":"no"'>
+                演示例子
             </span>
             <span>
                 <a href="https://github.com/clunch-contrib/chart" target="_blank">GitHub</a>
@@ -28,7 +31,8 @@
 
     let pages = {
         begin: () => import('./pages/begin/index.paper'),
-        api: () => import('./pages/api/index.paper')
+        api: () => import('./pages/api/index.paper'),
+        examples: () => import('./pages/examples/index.paper')
     };
 
     export default {

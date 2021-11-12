@@ -2,7 +2,7 @@
     <div class="menu">
         <ul :active='pagename=="start"?"yes":"no"'>
             <li>
-                <h3 @click='openPage("start","top","no")'>开始使用</h3>
+                <h3 @click='openPage("start","top","no")'>第一步：获取图表对象</h3>
                 <ul>
                     <li>
                         <h4 @click='doScroll("platform")'>兼容更多平台</h4>
@@ -21,6 +21,125 @@
                 </ul>
             </li>
         </ul>
+        <ul :active='pagename=="new"?"yes":"no"'>
+            <li>
+                <h3 @click='openPage("new","top","no")'>第二步：创建图表</h3>
+                <ul>
+                    <li>
+                        <h4 @click='doScroll("grammar")'>语法</h4>
+                    </li>
+                    <li>
+                        <h4 @click='doScroll("attr")'>属性</h4>
+                        <ul>
+                            <li>
+                                <h5 @click='doScroll("width")'>width</h5>
+                            </li>
+                            <li>
+                                <h5 @click='doScroll("height")'>height</h5>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4 @click='doScroll("method")'>方法</h4>
+                        <ul>
+                            <li>
+                                <h5 @click='doScroll("setOption")'>setOption</h5>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul :active='pagename=="options"?"yes":"no"'>
+            <li>
+                <h3 @click='openPage("options","top","no")'>第三步：配置项说明</h3>
+                <ul class='tree-menu'>
+                    <li>
+                        <h4 @click='doScroll("grid")' q-menu-btn>grid</h4>
+                        <ul>
+                            <li>
+                                <h5 @click='doScroll("x")'>x</h5>
+                            </li>
+                            <li>
+                                <h5 @click='doScroll("y")'>y</h5>
+                            </li>
+                            <li>
+                                <h5 @click='doScroll("width")'>width</h5>
+                            </li>
+                            <li>
+                                <h5 @click='doScroll("height")'>height</h5>
+                            </li>
+                            <li>
+                                <h5 @click='doScroll("left")'>left</h5>
+                            </li>
+                            <li>
+                                <h5 @click='doScroll("right")'>right</h5>
+                            </li>
+                            <li>
+                                <h5 @click='doScroll("top")'>top</h5>
+                            </li>
+                            <li>
+                                <h5 @click='doScroll("bottom")'>bottom</h5>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4 @click='doScroll("data")'>data</h4>
+                    </li>
+                    <li>
+                        <h4 @click='doScroll("title")' q-menu-btn>title</h4>
+                        <ul>
+                            <li>
+                                <h5 @click='doScroll("x")'>x</h5>
+                            </li>
+                            <li>
+                                <h5 @click='doScroll("y")'>y</h5>
+                            </li>
+                            <li>
+                                <h5 @click='doScroll("font-size")'>font-size</h5>
+                            </li>
+                            <li>
+                                <h5 @click='doScroll("color")'>color</h5>
+                            </li>
+                            <li>
+                                <h5 @click='doScroll("align")'>align</h5>
+                            </li>
+                            <li>
+                                <h5 @click='doScroll("baseline")'>baseline</h5>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4 @click='doScroll("series")' q-menu-btn>series</h4>
+                        <ul>
+                            <li>
+                                <h5 q-menu-btn>通用项</h5>
+                                <ul>
+                                    <li>
+                                        <h6 @click='doScroll("type")'>type</h6>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h5 @click='doScroll("bar")'>柱状图</h5>
+                            </li>
+                            <li>
+                                <h5 @click='doScroll("line")'>折线图</h5>
+                            </li>
+                            <li>
+                                <h5 @click='doScroll("pie")'>饼图</h5>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4 @click='doScroll("xAxis")'>xAxis</h4>
+                    </li>
+                    <li>
+                        <h4 @click='doScroll("yAxis")'>yAxis</h4>
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </div>
     <div id='root-view' class='view'>
         <div>
@@ -30,9 +149,12 @@
 </template>
 <script>
     import fixedScroll from '../../Service/fixedScroll.js';
+    import qMenuBtn from '../../directives/q-menu-btn.js';
 
     let pages = {
-        start: () => import('./start.paper')
+        start: () => import('./start.paper'),
+        new: () => import('./new.paper'),
+        options: () => import('./options.paper')
     };
 
     export default {
@@ -41,6 +163,9 @@
                 page: null,
                 pagename: ""
             };
+        },
+        directive: {
+            qMenuBtn
         },
         mounted() {
             let urlJson = this.urlFormat(window.location.href);
@@ -62,3 +187,97 @@
         }
     };
 </script>
+<style>
+    .tree-menu {
+        margin-left: 50px !important;
+        user-select: none;
+
+        h4,
+        h5,
+        h6 {
+            padding-left: 15px !important;
+        }
+
+        &>li:first-child {
+            &:before {
+                border-left: none;
+            }
+
+            &>ul {
+                &:before {
+                    height: calc(100% - 30px) !important;
+                    top: 15px;
+                }
+            }
+        }
+
+        li {
+            position: relative;
+
+            &:before {
+                display: inline-block;
+                content: " ";
+                width: 17px;
+                height: 30px;
+                border-width: 0 0 1px 1px;
+                border-style: dashed;
+                border-color: black;
+                position: absolute;
+                left: -10px;
+                top: -15px;
+            }
+
+            ul {
+                /* padding-left: 30px; */
+                /* padding-top: 10px; */
+
+                &:before {
+                    display: inline-block;
+                    content: " ";
+                    width: 10px;
+                    height: 100%;
+                    border-width: 0 0 0 1px;
+                    border-style: dashed;
+                    border-color: black;
+                    position: absolute;
+                    left: -10px;
+                    top: 10px;
+                }
+            }
+
+        }
+
+        /* 菜单打开关闭控制 */
+        [open] {
+            position: relative;
+
+            &:before {
+                display: inline-block;
+                content: " ";
+                width: 30px;
+                height: 30px;
+                background-size: 15px auto;
+                background-repeat: no-repeat;
+                background-position: center;
+                position: absolute;
+                left: -15px;
+                z-index: 1;
+            }
+        }
+
+        [open='yes']:before {
+            background-image: url('../../assets/open.png');
+        }
+
+        [open='no'] {
+            &:before {
+                background-image: url('../../assets/close.png');
+            }
+
+            &+ul {
+                display: none;
+            }
+        }
+
+    }
+</style>

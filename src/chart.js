@@ -1,7 +1,16 @@
 export default function (clunch) {
 
-    console.log(clunch);
+    let options=[];
 
-    return '未完成';
+    let chartManager={
 
+        new(option){
+
+
+
+        }
+
+    };
+
+    return chartManager;
 };

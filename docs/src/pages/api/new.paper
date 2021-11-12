@@ -1,0 +1,65 @@
+<template class='doc-view'>
+    <header id='fixed-top'>
+        第二步：创建图表
+    </header>
+    <h2 id='fixed-grammar'>
+        语法
+    </h2>
+    <pre q-code>
+        let chart = myChart.new(option);
+    </pre>
+    <p>
+        通过<span class="important">图表对象</span>上面的<span class="warn">new</span>方法可以获取一个
+        <span class="important">图表</span>chart。
+    </p>
+    <p>
+        上面的option是什么？我们称之为
+        <span class='important'>配置项</span>
+        。每个图表应该长什么样子，就由配置项确定即可，也就是一个JSON，例如：
+    </p>
+    <pre q-code>
+myChart.new({
+
+})
+    </pre>
+    <p>
+        关于<span class='important'>配置项</span>的具体内容，请查看
+        <a target="_blank" class='link' href="#/api/options?fixed=top">配置项说明</a>
+        一节。
+    </p>
+    <p>
+        此外，在这个<span class="important">图表</span>上有很多方法和属性，下面来说明。
+    </p>
+    <h2 id='fixed-attr'>
+        属性
+    </h2>
+    <h3 id='fixed-width'>
+        width
+    </h3>
+    <p>
+        当前<span class="important">图表</span>占据的宽。
+    </p>
+    <h3 id='fixed-height'>
+        height
+    </h3>
+    <p>
+        当前<span class="important">图表</span>占据的高。
+    </p>
+    <h2 id='fixed-method'>
+        方法
+    </h2>
+    <h3 id='fixed-setOption'>
+        setOption
+    </h3>
+    <p>
+        如果后续当前<span class="important">图表</span>的
+        <span class='important'>配置项</span>有变动，
+        需要修改，可以通过此方法重新设置。
+    </p>
+    <pre q-code>
+        chart.setOption(option);
+    </pre>
+    <p class="warn">
+        温馨提示：设置的时候，不需要像new的时候给那么全，只需要给出修改的部分即可。
+    </p>
+</template>

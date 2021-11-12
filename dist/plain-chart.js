@@ -9,7 +9,7 @@
  * Copyright (c) 2021 hai2007 走一步，再走一步。
  * Released under the MIT license
  *
- * Date:Thu Nov 11 2021 16:41:04 GMT+0800 (中国标准时间)
+ * Date:Fri Nov 12 2021 17:45:39 GMT+0800 (中国标准时间)
  */
 (function () {
   'use strict';
@@ -33,8 +33,10 @@
   var image = [{"name":"group","attrs":{"c-for":"(option,order) in options"},"children":[]}];
 
   function chart (clunch) {
-    console.log(clunch);
-    return '未完成';
+    var chartManager = {
+      "new": function _new(option) {}
+    };
+    return chartManager;
   }
 
   var bar = ['number', function ($number) {
@@ -117,7 +119,7 @@
   var PlainChart = function PlainChart(init) {
     return new Promise(function (resolve) {
       init(options, serieslist).then(function (clunch) {
-        resolve(chart(clunch));
+        resolve(chart());
       });
     });
   }; // H5独有

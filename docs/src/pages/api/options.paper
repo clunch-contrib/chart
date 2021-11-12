@@ -1,0 +1,23 @@
+<template class='doc-view'>
+    <header id='fixed-top'>
+        第三步：配置项说明
+    </header>
+    <h2 id='fixed-grid'>
+        grid
+    </h2>
+    <h2 id='fixed-data'>
+        data
+    </h2>
+    <h2 id='fixed-title'>
+        title
+    </h2>
+    <h2 id='fixed-series'>
+        series
+    </h2>
+    <h2 id='fixed-xAxis'>
+        xAxis
+    </h2>
+    <h2 id='fixed-yAxis'>
+        yAxis
+    </h2>
+</template>

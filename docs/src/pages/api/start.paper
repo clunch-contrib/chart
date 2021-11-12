@@ -1,6 +1,6 @@
 <template class='doc-view'>
     <header id='fixed-top'>
-        开始使用
+        第一步：获取图表对象
     </header>
     <p>
         首先，我们以web端为例，在使用前，你需要首先创建
