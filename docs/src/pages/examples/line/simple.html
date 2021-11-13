@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简单折线图 | 演示用例</title>
+    <script src="https://cdn.jsdelivr.net/npm/clunch"></script>
+    <script src='https://cdn.jsdelivr.net/npm/plain-chart'></script>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #root {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+
+        // 获取图表对象
+        var myChart = PlainChart.init(Clunch, document.getElementById('canvas'));
+
+        // 创建图表
+        var chart1 = myChart.new({
+
+            type: "line",
+            data: [34, 10, 20, 79, 13, 4],
+            xAxis: {
+                values: ["小麦", "大豆", "土豆", "玉米", "青菜", "香蕉"]
+            },
+            yAxis: {}
+
+        });
+
+    </script>
+</body>
+
+</html>

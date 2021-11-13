@@ -1,3 +1,90 @@
 <template>
-
+    <h2>
+        柱状图
+    </h2>
+    <ul>
+        <li class='bar_simple' @click='openExample("bar_simple")'>
+            简单柱状图
+        </li>
+    </ul>
+    <h2>
+        折线图
+    </h2>
+    <ul>
+        <li class='line_simple' @click='openExample("line_simple")'>
+            简单折线图
+        </li>
+    </ul>
+    <h2>
+        饼图
+    </h2>
+    <ul>
+        <li class='pie_simple' @click='openExample("pie_simple")'>
+            简单饼图
+        </li>
+    </ul>
+    <h2>
+        环形图
+    </h2>
+    <ul>
+        <li class='ring_simple' @click='openExample("ring_simple")'>
+            简单环形图
+        </li>
+    </ul>
 </template>
+<script>
+    import lazyLoad from './lazy-load.js';
+    export default {
+        methods: {
+            openExample(pagename) {
+                lazyLoad[pagename]().then(data => {
+                    localStorage.setItem('hai2007-sweethome-editor-html-code', data.default);
+                    this.loadPage("/sweethome/#/editor");
+                });
+            }
+        }
+    };
+</script>
+<style>
+    [quickpaper] {
+        height: calc(100vh - 60px);
+        overflow: auto;
+        padding: 20px 50px;
+
+        &>h2 {
+            font-size: 16px;
+            margin-top: 40px;
+        }
+
+        &>ul {
+            &>li {
+                display: inline-block;
+                font-size: 14px;
+                padding-top: 150px;
+                width: 200px;
+                margin: 10px;
+                text-align: center;
+                background-size: 90% auto;
+                background-repeat: no-repeat;
+                background-position: center top;
+                cursor: pointer;
+
+                &.line_simple {
+                    background-image: url('../../assets/line_simple.png');
+                }
+
+                &.bar_simple {
+                    background-image: url('../../assets/bar_simple.png');
+                }
+
+                &.pie_simple {
+                    background-image: url('../../assets/pie_simple.png');
+                }
+
+                &.ring_simple {
+                    background-image: url('../../assets/ring_simple.png');
+                }
+            }
+        }
+    }
+</style>
