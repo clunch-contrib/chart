@@ -25,7 +25,7 @@
             或
         </p>
         <pre q-code:html>
-            <script src='https://cdn.jsdelivr.net/npm/plain-chart@0'></script>
+            <script src='https://cdn.jsdelivr.net/npm/plain-chart@1'></script>
         </pre>
         <header>
             版本
