@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../logo.png">
-    <title>对于各种图表，配置项如何设计？ | 测试</title>
+    <title>配置项合并merge方法 | 测试</title>
     <script src="../node_modules/clunch/dist/clunch.js"></script>
     <script src="../dist/plain-chart.js"></script>
     <style>
@@ -30,12 +30,29 @@
         var chart1 = myChart.new({
 
             title: {
-                value: "我是标题",
-                color:"red",
-                'font-size':40
+                value: "加载中......",
+                color: "red",
+                'font-size': 40,
+                x: 100
             }
 
         });
+
+        setTimeout(() => {
+
+            chart1.setOption({
+                title: {
+                    value: "生产曲线"
+                },
+                type: "line",
+                data: [34, 10, 20, 79, 13, 4],
+                xAxis: {
+                    values: ["小麦", "大豆", "土豆", "玉米", "青菜", "香蕉"]
+                },
+                yAxis: {}
+            });
+
+        }, 3000);
 
 
     </script>

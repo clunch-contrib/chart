@@ -58,84 +58,78 @@
                         <h4 @click='doScroll("grid")' q-menu-btn>grid</h4>
                         <ul>
                             <li>
-                                <h5 @click='doScroll("x")'>x</h5>
+                                <h5 @click='doScroll("grid.x")'>x</h5>
                             </li>
                             <li>
-                                <h5 @click='doScroll("y")'>y</h5>
+                                <h5 @click='doScroll("grid.y")'>y</h5>
                             </li>
                             <li>
-                                <h5 @click='doScroll("width")'>width</h5>
+                                <h5 @click='doScroll("grid.width")'>width</h5>
                             </li>
                             <li>
-                                <h5 @click='doScroll("height")'>height</h5>
+                                <h5 @click='doScroll("grid.height")'>height</h5>
                             </li>
                             <li>
-                                <h5 @click='doScroll("left")'>left</h5>
+                                <h5 @click='doScroll("grid.left")'>left</h5>
                             </li>
                             <li>
-                                <h5 @click='doScroll("right")'>right</h5>
+                                <h5 @click='doScroll("grid.right")'>right</h5>
                             </li>
                             <li>
-                                <h5 @click='doScroll("top")'>top</h5>
+                                <h5 @click='doScroll("grid.top")'>top</h5>
                             </li>
                             <li>
-                                <h5 @click='doScroll("bottom")'>bottom</h5>
+                                <h5 @click='doScroll("grid.bottom")'>bottom</h5>
                             </li>
                         </ul>
-                    </li>
-                    <li>
-                        <h4 @click='doScroll("data")'>data</h4>
                     </li>
                     <li>
                         <h4 @click='doScroll("title")' q-menu-btn>title</h4>
                         <ul>
                             <li>
-                                <h5 @click='doScroll("x")'>x</h5>
+                                <h5 @click='doScroll("title.x")'>x</h5>
                             </li>
                             <li>
-                                <h5 @click='doScroll("y")'>y</h5>
+                                <h5 @click='doScroll("title.y")'>y</h5>
                             </li>
                             <li>
-                                <h5 @click='doScroll("font-size")'>font-size</h5>
+                                <h5 @click='doScroll("title.value")'>value</h5>
                             </li>
                             <li>
-                                <h5 @click='doScroll("color")'>color</h5>
+                                <h5 @click='doScroll("title.font-size")'>font-size</h5>
                             </li>
                             <li>
-                                <h5 @click='doScroll("align")'>align</h5>
+                                <h5 @click='doScroll("title.color")'>color</h5>
                             </li>
                             <li>
-                                <h5 @click='doScroll("baseline")'>baseline</h5>
+                                <h5 @click='doScroll("title.align")'>align</h5>
+                            </li>
+                            <li>
+                                <h5 @click='doScroll("title.baseline")'>baseline</h5>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <h4 @click='doScroll("series")' q-menu-btn>series</h4>
+                        <h4 @click='doScroll("type")'>type</h4>
+                    </li>
+                    <li>
+                        <h4 @click='doScroll("data")'>data</h4>
+                    </li>
+                    <li>
+                        <h4 @click='doScroll("xAxis")' q-menu-btn>xAxis</h4>
                         <ul>
                             <li>
-                                <h5 q-menu-btn>通用项</h5>
-                                <ul>
-                                    <li>
-                                        <h6 @click='doScroll("type")'>type</h6>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h5 @click='doScroll("bar")'>柱状图</h5>
-                            </li>
-                            <li>
-                                <h5 @click='doScroll("line")'>折线图</h5>
-                            </li>
-                            <li>
-                                <h5 @click='doScroll("pie")'>饼图</h5>
+                                <h5 @click='doScroll("xAxis.values")'>values</h5>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <h4 @click='doScroll("xAxis")'>xAxis</h4>
-                    </li>
-                    <li>
-                        <h4 @click='doScroll("yAxis")'>yAxis</h4>
+                        <h4 @click='doScroll("yAxis")' q-menu-btn>yAxis</h4>
+                        <ul>
+                            <li>
+                                <h5 @click='doScroll("yAxis.values")'>values</h5>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </li>
@@ -227,9 +221,13 @@
                 top: -15px;
             }
 
+            &:last-child {
+                ul:before {
+                    display: none;
+                }
+            }
+
             ul {
-                /* padding-left: 30px; */
-                /* padding-top: 10px; */
 
                 &:before {
                     display: inline-block;
@@ -243,6 +241,7 @@
                     left: -10px;
                     top: 10px;
                 }
+
             }
 
         }

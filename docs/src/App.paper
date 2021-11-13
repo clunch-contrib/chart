@@ -1,10 +1,6 @@
 <template>
     <header>
         <span>一个比 Apache ECharts 更简单的开源可视化图表库</span>
-        <i class="tips"
-            style="font-style: normal;background-color: rgb(177, 3, 3);color:white;font-size: 12px;padding:5px 10px;margin-left: 50px;">
-            温馨提示：本项目目前处于研发中，敬请期待~
-        </i>
         <nav>
             <span @click='loadpage("begin","no")' :active='url=="begin"?"yes":"no"'>
                 开始
@@ -78,7 +74,7 @@
 
             &>span {
                 font-family: cursive;
-                font-size: 20px;
+                font-size: 18px;
                 font-weight: 200;
             }
 

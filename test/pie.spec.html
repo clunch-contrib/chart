@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../logo.png">
-    <title>对于各种图表，配置项如何设计？ | 测试</title>
+    <title>饼图 | 测试</title>
     <script src="../node_modules/clunch/dist/clunch.js"></script>
     <script src="../dist/plain-chart.js"></script>
     <style>
@@ -29,11 +29,8 @@
         // 创建图表
         var chart1 = myChart.new({
 
-            title: {
-                value: "我是标题",
-                color:"red",
-                'font-size':40
-            }
+            type: "pie",
+            data: [4, 1, 20, 79, 13, 9]
 
         });
 

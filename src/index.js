@@ -5,33 +5,36 @@ import chart from './chart.js';
 import bar from './series/bar.js';
 import line from './series/line.js';
 import pie from './series/pie.js';
-import xRuler from './series/x-ruler';
-import yRuler from './series/y-ruler.js';
-import hover from './series/hover';
 
 let serieslist = {
     'plain-chart-bar': bar,
     'plain-chart-line': line,
-    'plain-chart-pie': pie,
-    'plain-chart-x-ruler': xRuler,
-    'plain-chart-y-ruler': yRuler,
-    'plain-chart-hover': hover
+    'plain-chart-pie': pie
 };
+
+let server = {};
 
 let options = {
     render: image,
-    data() {
-        return {
-            options: []
+    debug: false,
+    data: ['$ruler', function ($ruler) {
+
+        server = {
+            $ruler
         };
-    }
+
+        return {
+            options: [],
+            flag: 0
+        };
+    }]
 };
 
 // 为跨端提供
 let PlainChart = init => {
     return new Promise(resolve => {
         init(options, serieslist).then(clunch => {
-            resolve(chart(clunch));
+            resolve(chart(clunch, server.$ruler));
         });
     });
 };
@@ -44,7 +47,7 @@ PlainChart.init = function (Clunch, el) {
 
     // 创建对象并生成图表对象
     options.el = el;
-    return chart(new Clunch(options));
+    return chart(new Clunch(options), server.$ruler);
 
 };
 
