@@ -33,14 +33,10 @@
     </ul>
 </template>
 <script>
-    import lazyLoad from './lazy-load.js';
     export default {
         methods: {
             openExample(pagename) {
-                lazyLoad[pagename]().then(data => {
-                    localStorage.setItem('hai2007-sweethome-editor-html-code', data.default);
-                    this.loadPage("/sweethome/#/editor");
-                });
+                this.loadPage("https://hai2007.gitee.io/sweethome/#/editor?file=plain-chart_" + pagename);
             }
         }
     };
