@@ -16,6 +16,77 @@ let myChart = PlainChart.init(Clunch, document.getElementById('canvas'));
     <p>
         <span class="important">图表对象</span>上有很多方法，使用上面的方法，就可以完成各种绘图等操作。
     </p>
+    <h2 id='fixed-method'>
+        方法
+    </h2>
+    <p>
+        接下来，我们来说说<span class="important">图表对象</span>上一些普通方法（一些特殊的方法开辟了独立的章节进行说明），这些方法可以先不学习，在使用的时候回来查阅即可。
+    </p>
+    <h3 id='fixed-bind'>
+        bind
+    </h3>
+    <p>
+        此方法用于绑定事件，语法如下：
+    </p>
+    <pre q-code>
+        myChart.bind(eventType, callback);
+    </pre>
+    <p>
+        其中<span class="warn">eventType</span>表示事件类型，可选的内容有：
+    </p>
+    <ul>
+        <li>
+            <span class="important">click</span>:点击
+        </li>
+        <li>
+            <span class="important">dblclick</span>:双击
+        </li>
+        <li>
+            <span class="important">mousemove</span>:鼠标移动
+        </li>
+        <li>
+            <span class="important">mousedown</span>:鼠标按下
+        </li>
+        <li>
+            <span class="important">mouseup</span>:鼠标放开
+        </li>
+    </ul>
+    <p>
+        而<span class="warn">callback</span>是事件回调，存在一个形参<span class="important">target</span>，里面记录了一些有用的信息。
+    </p>
+    <p>
+        举个例子：
+    </p>
+    <pre q-code>
+{
+    attr: {order: 0, x: 50, y: 250, width: 300, height: 200, …},
+    data: {order: 0},
+    id: "0for0-0-4",
+    left: 218,
+    region: "default",
+    series: "plain-chart-bar",
+    subRegion: "3",
+    top: 178
+}
+    </pre>
+    <p>
+        如果鼠标交互的位置是空白的，此参数就会如下：
+    </p>
+    <pre q-code>
+{
+    attr: {},
+    data: null,
+    left: 244,
+    region: null,
+    series: null,
+    subRegion: null,
+    top: 292
+}
+    </pre>
+    <p class="warn">
+        温馨提示：更多的细节，你可以
+        <a target="_blank" class='link' href="https://hai2007.gitee.io/clunch/#/api/directive?fixed=c-on">点击此处</a>进行查看。
+    </p>
     <h2 id='fixed-platform'>
         兼容更多平台
     </h2>

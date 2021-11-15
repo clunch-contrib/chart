@@ -2,11 +2,22 @@ export default ['number', 'json', '$getLoopColors', function ($number, $json, $g
 
     return {
         attrs: {
+            order: $number(),
             x: $number(),
             y: $number(),
             width: $number(),
             height: $number(),
             data: $json()
+        },
+        region: {
+            default(render, attr) {
+                let w1 = attr.width / attr.data.values.length;
+                for (let i = 0; i < attr.data.values.length; i++) {
+                    render(i, {
+                        order: attr.order
+                    }).fillRect(attr.x + i * w1, attr.y, w1, -1 * attr.height);
+                }
+            }
         },
         link(painter, attr) {
 

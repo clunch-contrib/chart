@@ -8,6 +8,7 @@ export default function (clunch, $ruler) {
 
     let chartManager = {
 
+        // 创建图表
         new(option) {
 
             // 登记好新的图表
@@ -24,6 +25,7 @@ export default function (clunch, $ruler) {
 
             return {
 
+                // 设置配置项
                 setOption(newOption) {
 
                     // 合并配置
@@ -37,6 +39,13 @@ export default function (clunch, $ruler) {
 
             };
 
+        },
+
+        // 绑定事件
+        bind(eventType, doback) {
+            clunch.$bind(eventType, target => {
+                doback(target);
+            });
         }
 
     };

@@ -4,12 +4,12 @@
  *
  * author 你好2007 < https://hai2007.gitee.io/sweethome >
  *
- * version 1.0.0
+ * version 1.0.1
  *
  * Copyright (c) 2021 hai2007 走一步，再走一步。
  * Released under the MIT license
  *
- * Date:Sat Nov 13 2021 16:15:30 GMT+0800 (GMT+08:00)
+ * Date:Mon Nov 15 2021 10:26:43 GMT+0800 (中国标准时间)
  */
 (function () {
   'use strict';
@@ -104,7 +104,7 @@
     };
   }
 
-  var image = [{"name":"group","attrs":{"c-for":"(option,order) in options"},"children":[{"name":"text","attrs":{"c-if":"option.title",":x":"option.grid.x+option.title.x",":y":"option.grid.y+option.title.y",":content":"option.title.value",":fill-color":"option.title.color",":font-size":"option.title[\"font-size\"]",":align":"option.title.align",":baseline":"option.title.baseline"},"children":[]},{"name":"ruler","attrs":{"c-if":"option.xAxis",":x":"option.grid.x+option.grid.left",":y":"option.grid.y+option.grid.height-option.grid.bottom",":length":"option.grid.width-option.grid.left-option.grid.right","direction":"LR","mark-direction":"right","value-position":"between",":value":"option.xAxis.values"},"children":[]},{"name":"ruler","attrs":{"c-if":"option.yAxis",":x":"option.grid.x+option.grid.left",":y":"option.grid.y+option.grid.height-option.grid.bottom",":length":"option.grid.height-option.grid.top-option.grid.bottom","direction":"BT","mark-direction":"left","value-position":"mark",":value":"option.yAxis.values"},"children":[]},{"name":"plain-chart-bar","attrs":{"c-if":"option.type==\"bar\"",":x":"option.grid.x+option.grid.left",":y":"option.grid.y+option.grid.height-option.grid.bottom",":width":"option.grid.width-option.grid.left-option.grid.right",":height":"option.grid.height-option.grid.top-option.grid.bottom",":data":"option.series"},"children":[]},{"name":"plain-chart-line","attrs":{"c-if":"option.type==\"line\"",":x":"option.grid.x+option.grid.left",":y":"option.grid.y+option.grid.height-option.grid.bottom",":width":"option.grid.width-option.grid.left-option.grid.right",":height":"option.grid.height-option.grid.top-option.grid.bottom",":data":"option.series"},"children":[]},{"name":"plain-chart-pie","attrs":{"c-if":"option.type==\"pie\" || option.type==\"ring\"",":cx":"option.grid.x+option.grid.left+(option.grid.width-option.grid.left-option.grid.right)*0.5",":cy":"option.grid.y+option.grid.top+(option.grid.height-option.grid.top-option.grid.bottom)*0.5",":radius":"option.grid.x+(option.grid.width-option.grid.left-option.grid.right)*0.5\n            >\n            option.grid.y+(option.grid.height-option.grid.top-option.grid.bottom)*0.5\n            ?\n            option.grid.y+(option.grid.height-option.grid.top-option.grid.bottom)*0.5\n            :\n            option.grid.x+(option.grid.width-option.grid.left-option.grid.right)*0.5",":values":"option.series.values",":type":"option.type"},"children":[]}]}];
+  var image = [{"name":"group","attrs":{"c-for":"(option,order) in options"},"children":[{"name":"text","attrs":{"c-if":"option.title",":x":"option.grid.x+option.title.x",":y":"option.grid.y+option.title.y",":content":"option.title.value",":fill-color":"option.title.color",":font-size":"option.title[\"font-size\"]",":align":"option.title.align",":baseline":"option.title.baseline"},"children":[]},{"name":"ruler","attrs":{"c-if":"option.xAxis",":x":"option.grid.x+option.grid.left",":y":"option.grid.y+option.grid.height-option.grid.bottom",":length":"option.grid.width-option.grid.left-option.grid.right","direction":"LR","mark-direction":"right","value-position":"between",":value":"option.xAxis.values"},"children":[]},{"name":"ruler","attrs":{"c-if":"option.yAxis",":x":"option.grid.x+option.grid.left",":y":"option.grid.y+option.grid.height-option.grid.bottom",":length":"option.grid.height-option.grid.top-option.grid.bottom","direction":"BT","mark-direction":"left","value-position":"mark",":value":"option.yAxis.values"},"children":[]},{"name":"plain-chart-bar","attrs":{"c-if":"option.type==\"bar\"",":order":"order",":x":"option.grid.x+option.grid.left",":y":"option.grid.y+option.grid.height-option.grid.bottom",":width":"option.grid.width-option.grid.left-option.grid.right",":height":"option.grid.height-option.grid.top-option.grid.bottom",":data":"option.series"},"children":[]},{"name":"plain-chart-line","attrs":{"c-if":"option.type==\"line\"",":order":"order",":x":"option.grid.x+option.grid.left",":y":"option.grid.y+option.grid.height-option.grid.bottom",":width":"option.grid.width-option.grid.left-option.grid.right",":height":"option.grid.height-option.grid.top-option.grid.bottom",":data":"option.series"},"children":[]},{"name":"plain-chart-pie","attrs":{"c-if":"option.type==\"pie\" || option.type==\"ring\"",":order":"order",":cx":"option.grid.x+option.grid.left+(option.grid.width-option.grid.left-option.grid.right)*0.5",":cy":"option.grid.y+option.grid.top+(option.grid.height-option.grid.top-option.grid.bottom)*0.5",":radius":"option.grid.x+(option.grid.width-option.grid.left-option.grid.right)*0.5\n            >\n            option.grid.y+(option.grid.height-option.grid.top-option.grid.bottom)*0.5\n            ?\n            option.grid.y+(option.grid.height-option.grid.top-option.grid.bottom)*0.5\n            :\n            option.grid.x+(option.grid.width-option.grid.left-option.grid.right)*0.5",":values":"option.series.values",":type":"option.type"},"children":[]}]}];
 
   /**
    * 判断一个值是不是Object。
@@ -906,6 +906,7 @@
   function chart (clunch, $ruler) {
     var options = [];
     var chartManager = {
+      // 创建图表
       "new": function _new(option) {
         // 登记好新的图表
         var order = options.length;
@@ -916,6 +917,7 @@
           clunch.flag += 1;
         }, 300);
         return {
+          // 设置配置项
           setOption: function setOption(newOption) {
             // 合并配置
             options[order] = merge(options[order], newOption); // 更新绘图
@@ -924,6 +926,12 @@
             clunch.flag += 1;
           }
         };
+      },
+      // 绑定事件
+      bind: function bind(eventType, doback) {
+        clunch.$bind(eventType, function (target) {
+          doback(target);
+        });
       }
     };
     return chartManager;
@@ -932,11 +940,23 @@
   var bar = ['number', 'json', '$getLoopColors', function ($number, $json, $getLoopColors) {
     return {
       attrs: {
+        order: $number(),
         x: $number(),
         y: $number(),
         width: $number(),
         height: $number(),
         data: $json()
+      },
+      region: {
+        "default": function _default(render, attr) {
+          var w1 = attr.width / attr.data.values.length;
+
+          for (var i = 0; i < attr.data.values.length; i++) {
+            render(i, {
+              order: attr.order
+            }).fillRect(attr.x + i * w1, attr.y, w1, -1 * attr.height);
+          }
+        }
       },
       link: function link(painter, attr) {
         painter.config({
@@ -955,11 +975,23 @@
   var line = ['number', 'json', '$getLoopColors', function ($number, $json, $getLoopColors) {
     return {
       attrs: {
+        order: $number(),
         x: $number(),
         y: $number(),
         width: $number(),
         height: $number(),
         data: $json()
+      },
+      region: {
+        "default": function _default(render, attr) {
+          var w1 = attr.width / attr.data.values.length;
+
+          for (var i = 0; i < attr.data.values.length; i++) {
+            render(i, {
+              order: attr.order
+            }).fillRect(attr.x + i * w1, attr.y, w1, -1 * attr.height);
+          }
+        }
       },
       link: function link(painter, attr) {
         painter.config({
@@ -981,28 +1013,58 @@
   var pie = ['number', 'json', 'string', '$getLoopColors', function ($number, $json, $string, $getLoopColors) {
     return {
       attrs: {
+        order: $number(),
         cx: $number(),
         cy: $number(),
         radius: $number(),
         type: $string(),
         values: $json()
       },
+      region: {
+        "default": function _default(render, attr) {
+          var allValue = 0;
+
+          var _iterator = _createForOfIteratorHelper(attr.values),
+              _step;
+
+          try {
+            for (_iterator.s(); !(_step = _iterator.n()).done;) {
+              var value = _step.value;
+              allValue += value;
+            }
+          } catch (err) {
+            _iterator.e(err);
+          } finally {
+            _iterator.f();
+          }
+
+          var beginDeg = Math.PI * -0.5;
+
+          for (var index in attr.values) {
+            var deg = attr.values[index] / allValue * Math.PI * 2;
+            render(index, {
+              order: attr.order
+            }).fillArc(attr.cx, attr.cy, (attr.type == 'ring' ? 0.5 : 0) * attr.radius, attr.radius, beginDeg, deg);
+            beginDeg += deg;
+          }
+        }
+      },
       link: function link(painter, attr) {
         var colors = $getLoopColors(attr.values.length);
         var allValue = 0;
 
-        var _iterator = _createForOfIteratorHelper(attr.values),
-            _step;
+        var _iterator2 = _createForOfIteratorHelper(attr.values),
+            _step2;
 
         try {
-          for (_iterator.s(); !(_step = _iterator.n()).done;) {
-            var value = _step.value;
+          for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+            var value = _step2.value;
             allValue += value;
           }
         } catch (err) {
-          _iterator.e(err);
+          _iterator2.e(err);
         } finally {
-          _iterator.f();
+          _iterator2.f();
         }
 
         var beginDeg = Math.PI * -0.5;

@@ -35,6 +35,7 @@
 
     <!-- 柱状图 -->
     <plain-chart-bar c-if='option.type=="bar"'
+        :order='order'
         :x='option.grid.x+option.grid.left'
         :y='option.grid.y+option.grid.height-option.grid.bottom'
         :width='option.grid.width-option.grid.left-option.grid.right'
@@ -44,6 +45,7 @@
 
      <!-- 折线图 -->
     <plain-chart-line c-if='option.type=="line"'
+        :order='order'
         :x='option.grid.x+option.grid.left'
         :y='option.grid.y+option.grid.height-option.grid.bottom'
         :width='option.grid.width-option.grid.left-option.grid.right'
@@ -53,6 +55,7 @@
 
     <!-- 饼图或环图 -->
     <plain-chart-pie c-if='option.type=="pie" || option.type=="ring"'
+        :order='order'
         :cx='option.grid.x+option.grid.left+(option.grid.width-option.grid.left-option.grid.right)*0.5'
         :cy='option.grid.y+option.grid.top+(option.grid.height-option.grid.top-option.grid.bottom)*0.5'
         :radius='

@@ -5,6 +5,14 @@
                 <h3 @click='openPage("start","top","no")'>第一步：获取图表对象</h3>
                 <ul>
                     <li>
+                        <h4 @click='doScroll("method")'>方法</h4>
+                        <ul>
+                            <li>
+                                <h5 @click='doScroll("bind")'>bind</h5>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
                         <h4 @click='doScroll("platform")'>兼容更多平台</h4>
                         <ul>
                             <li>
