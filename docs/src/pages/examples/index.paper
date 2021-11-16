@@ -9,33 +9,33 @@
         <h2 @click='doScroll("pie")' class='pie'>
             饼图
         </h2>
-        <h2 @click='doScroll("scatter")' class='scatter'>
+        <!-- <h2 @click='doScroll("scatter")' class='scatter'>
             散点图
-        </h2>
+        </h2> -->
         <h2 @click='doScroll("map")' class='map'>
             地图
         </h2>
-        <h2 @click='doScroll("candlestick")' class='candlestick'>
+        <!-- <h2 @click='doScroll("candlestick")' class='candlestick'>
             K线图
-        </h2>
-        <h2 @click='doScroll("radar")' class='radar'>
+        </h2> -->
+        <!-- <h2 @click='doScroll("radar")' class='radar'>
             雷达图
-        </h2>
+        </h2> -->
         <h2 @click='doScroll("tree")' class='tree'>
             树图
         </h2>
-        <h2 @click='doScroll("sankey")' class='sankey'>
+        <!-- <h2 @click='doScroll("sankey")' class='sankey'>
             桑基图
-        </h2>
-        <h2 @click='doScroll("gauge")' class='gauge'>
+        </h2> -->
+        <!-- <h2 @click='doScroll("gauge")' class='gauge'>
             仪表盘
-        </h2>
-        <h2 @click='doScroll("zoom")' class='zoom'>
+        </h2> -->
+        <!-- <h2 @click='doScroll("zoom")' class='zoom'>
             数据区域缩放
-        </h2>
-        <h2 @click='doScroll("drag")' class='drag'>
+        </h2> -->
+        <!-- <h2 @click='doScroll("drag")' class='drag'>
             拖拽
-        </h2>
+        </h2> -->
     </div>
     <div id='root-view' class='view'>
         <h2 id='fixed-bar'>
@@ -71,13 +71,11 @@
                 带提示的环形图
             </li>
         </ul>
-        <h2 id='fixed-scatter'>
+        <!-- <h2 id='fixed-scatter'>
             散点图
             <span>scatter</span>
-        </h2>
-        <p style='color:red;padding:50px;'>
-            待开发！
-        </p>
+        </h2> -->
+
         <h2 id='fixed-map'>
             地图
             <span>map</span>
@@ -87,20 +85,16 @@
                 中国地图
             </li>
         </ul>
-        <h2 id='fixed-candlestick'>
+        <!-- <h2 id='fixed-candlestick'>
             K线图
             <span>candlestick</span>
-        </h2>
-        <p style='color:red;padding:50px;'>
-            待开发！
-        </p>
-        <h2 id='fixed-radar'>
+        </h2> -->
+
+        <!-- <h2 id='fixed-radar'>
             雷达图
             <span>radar</span>
-        </h2>
-        <p style='color:red;padding:50px;'>
-            待开发！
-        </p>
+        </h2> -->
+
         <h2 id='fixed-tree'>
             树图
             <span>tree</span>
@@ -122,34 +116,26 @@
                 从上往下树图
             </li>
         </ul>
-        <h2 id='fixed-sankey'>
+        <!-- <h2 id='fixed-sankey'>
             桑基图
             <span>sankey</span>
-        </h2>
-        <p style='color:red;padding:50px;'>
-            待开发！
-        </p>
-        <h2 id='fixed-gauge'>
+        </h2> -->
+
+        <!-- <h2 id='fixed-gauge'>
             仪表盘
             <span>gauge</span>
-        </h2>
-        <p style='color:red;padding:50px;'>
-            待开发！
-        </p>
-        <h2 id='fixed-zoom'>
+        </h2> -->
+
+        <!-- <h2 id='fixed-zoom'>
             数据区域缩放
             <span>zoom</span>
-        </h2>
-        <p style='color:red;padding:50px;'>
-            待开发！
-        </p>
-        <h2 id='fixed-drag'>
+        </h2> -->
+
+        <!-- <h2 id='fixed-drag'>
             拖拽
             <span>drag</span>
-        </h2>
-        <p style='color:red;padding:50px;'>
-            待开发！
-        </p>
+        </h2> -->
+
     </div>
 </template>
 <script>
