@@ -156,6 +156,18 @@
         <a target="_blank" href="https://github.com/hai2007/datapool/issues" class="link">去这里</a>
         给我们留言~
     </p>
+    <h3>
+        类型三
+    </h3>
+    <p>
+        如果是"tree"，默认支持的格式如下：
+    </p>
+    <pre q-code>
+[{
+    name:"",
+    children:[...]
+},...]
+    </pre>
     <h2 id='fixed-xAxis'>
         xAxis
     </h2>
