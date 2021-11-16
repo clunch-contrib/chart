@@ -60,6 +60,7 @@
 <style lang="scss">
     [quickpaper] {
         &>header {
+            position: relative;
             background-color: #fff;
             border-bottom: 1px solid #eaecef;
             height: 60px;

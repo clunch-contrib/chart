@@ -33,6 +33,38 @@
         :value='option.yAxis.values'
     />
 
+    <!-- 树图 -->
+    <plain-chart-tree c-if='option.type=="tree"'
+        :order='order'
+        :cx='option.grid.x+option.grid.left+(option.grid.width-option.grid.left-option.grid.right)*0.5'
+        :cy='option.grid.y+option.grid.top+(option.grid.height-option.grid.top-option.grid.bottom)*0.5'
+        :radius='
+            option.grid.x+(option.grid.width-option.grid.left-option.grid.right)*0.5
+            >
+            option.grid.y+(option.grid.height-option.grid.top-option.grid.bottom)*0.5
+            ?
+            option.grid.y+(option.grid.height-option.grid.top-option.grid.bottom)*0.5
+            :
+            option.grid.x+(option.grid.width-option.grid.left-option.grid.right)*0.5
+            '
+        :x='option.grid.x+option.grid.left'
+        :y='option.grid.y+option.grid.bottom'
+        :width='option.grid.width-option.grid.left-option.grid.right'
+        :height='option.grid.height-option.grid.top-option.grid.bottom'
+        :data='option.treeData'
+        :type='option.treeType'
+    />
+
+    <!-- 地图 -->
+    <plain-chart-map c-if='option.type=="map"'
+        :order='order'
+        :cx='option.grid.x+option.grid.left+(option.grid.width-option.grid.left-option.grid.right)*0.5'
+        :cy='option.grid.y+option.grid.top+(option.grid.height-option.grid.top-option.grid.bottom)*0.5'
+        :width='option.grid.width-option.grid.left-option.grid.right'
+        :height='option.grid.height-option.grid.top-option.grid.bottom'
+        :geo-json='option.geo'
+    />
+
     <!-- 柱状图 -->
     <plain-chart-bar c-if='option.type=="bar"'
         :order='order'
@@ -68,8 +100,8 @@
             option.grid.x+(option.grid.width-option.grid.left-option.grid.right)*0.5
             '
         :values='option.series.values'
+        :names='option.series.names'
         :type='option.type'
     />
-
 
 </group>

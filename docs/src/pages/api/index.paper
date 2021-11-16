@@ -139,6 +139,14 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <h4 @click='doScroll("tree")' q-menu-btn>tree</h4>
+                        <ul>
+                            <li>
+                                <h5 @click='doScroll("tree.direction")'>direction</h5>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
         </ul>

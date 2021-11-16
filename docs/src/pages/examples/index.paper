@@ -67,6 +67,9 @@
             <li class='ring_simple' @click='openExample("ring_simple")'>
                 简单环形图
             </li>
+            <li class='ring_text' @click='openExample("ring_text")'>
+                带提示的环形图
+            </li>
         </ul>
         <h2 id='fixed-scatter'>
             散点图
@@ -79,9 +82,11 @@
             地图
             <span>map</span>
         </h2>
-        <p style='color:red;padding:50px;'>
-            待开发！
-        </p>
+        <ul>
+            <li class='map_china' @click='openExample("map_china")'>
+                中国地图
+            </li>
+        </ul>
         <h2 id='fixed-candlestick'>
             K线图
             <span>candlestick</span>
@@ -100,9 +105,23 @@
             树图
             <span>tree</span>
         </h2>
-        <p style='color:red;padding:50px;'>
-            待开发！
-        </p>
+        <ul>
+            <li class='tree_circle' @click='openExample("tree_circle")'>
+                圆形树图
+            </li>
+            <li class='tree_BT' @click='openExample("tree_BT")'>
+                从下往上树图
+            </li>
+            <li class='tree_LR' @click='openExample("tree_LR")'>
+                从左往右树图
+            </li>
+            <li class='tree_RL' @click='openExample("tree_RL")'>
+                从右往左树图
+            </li>
+            <li class='tree_TB' @click='openExample("tree_TB")'>
+                从上往下树图
+            </li>
+        </ul>
         <h2 id='fixed-sankey'>
             桑基图
             <span>sankey</span>
@@ -175,7 +194,7 @@
                     background-repeat: no-repeat;
                     cursor: pointer;
 
-                    &:hover{
+                    &:hover {
                         border-right: 4px solid #5067a2;
                     }
 
@@ -278,6 +297,34 @@
 
                         &.ring_simple {
                             background-image: url('../../assets/ring_simple.png');
+                        }
+
+                        &.ring_text {
+                            background-image: url('../../assets/ring_text.png');
+                        }
+
+                        &.tree_circle {
+                            background-image: url('../../assets/tree_circle.png');
+                        }
+
+                        &.tree_TB {
+                            background-image: url('../../assets/tree_TB.png');
+                        }
+
+                        &.tree_BT {
+                            background-image: url('../../assets/tree_BT.png');
+                        }
+
+                        &.tree_LR {
+                            background-image: url('../../assets/tree_LR.png');
+                        }
+
+                        &.tree_RL {
+                            background-image: url('../../assets/tree_RL.png');
+                        }
+
+                        &.map_china {
+                            background-image: url('../../assets/map_china.png');
                         }
                     }
                 }

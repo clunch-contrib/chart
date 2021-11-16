@@ -1,6 +1,6 @@
 {
   "name": "plain-chart",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "一个比 Apache ECharts 更简单的开源可视化图表库",
   "main": "dist/plain-chart.min.js",
   "scripts": {

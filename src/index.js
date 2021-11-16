@@ -5,11 +5,15 @@ import chart from './chart.js';
 import bar from './series/bar.js';
 import line from './series/line.js';
 import pie from './series/pie.js';
+import map from './series/map.js';
+import tree from './series/tree.js';
 
 let serieslist = {
     'plain-chart-bar': bar,
     'plain-chart-line': line,
-    'plain-chart-pie': pie
+    'plain-chart-pie': pie,
+    'plain-chart-map': map,
+    'plain-chart-tree': tree
 };
 
 let server = {};
@@ -27,7 +31,10 @@ let options = {
             options: [],
             flag: 0
         };
-    }]
+    }],
+    resized() {
+        this.doResizeBack();
+    }
 };
 
 // 为跨端提供

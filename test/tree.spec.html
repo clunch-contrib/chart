@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../logo.png">
+    <title>树图 | 测试</title>
+    <script src="../node_modules/clunch/dist/clunch.js"></script>
+    <script src="../dist/plain-chart.js"></script>
+    <script src="https://hai2007.github.io/datapool/flare.js"></script>
+    <style>
+        #canvas {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id='canvas'></div>
+
+    <script>
+
+        // 获取图表对象
+        var myChart = PlainChart.init(Clunch, document.getElementById('canvas'));
+
+        // 创建图表
+        var chart1 = myChart.new({
+
+            type: "tree",
+            data: flare,
+
+            // 树图独有配置
+            tree: {
+                direction: "circle"
+            }
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>

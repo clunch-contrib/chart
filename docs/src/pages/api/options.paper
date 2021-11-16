@@ -114,13 +114,19 @@
         type
     </h2>
     <p>
-        图表的类型，目前可选有："bar"、"line"、"pie"、"ring"。
+        图表的类型，目前可选有："bar"、"line"、"pie"、"ring"、"map"、"tree"。
     </p>
     <h2 id='fixed-data'>
         data
     </h2>
     <p>
-        表示绘图需要使用得数据，格式如下：
+        表示绘图需要使用得数据，不同的图形有不同的格式要求，下面分类说明。
+    </p>
+    <h3>
+        类型一
+    </h3>
+    <p>
+        如果是常规图形，如"bar"、"line"、"pie"、"ring"：
     </p>
     <pre q-code>
         [number,...]
@@ -134,6 +140,22 @@
     name:string
 },...]
     </pre>
+    <h3>
+        类型二
+    </h3>
+    <p>
+        如果是"map"，表示地图地理数据，是一种对各种地理数据结构进行编码的格式，基于Javascript对象表示法(JavaScript Object Notation, 简称JSON)的地理空间信息数据交换格式。
+    </p>
+    <p>
+        由于数据比较特殊，为了方便你的使用，我们维护了常用的一些数据，你可以去
+        <a href="https://www.npmjs.com/org/datapool" target="_blank" class='link'>datapool</a>
+        选择你需要的数据。
+    </p>
+    <p class="warn">
+        如果没有你想要的数据，可以
+        <a target="_blank" href="https://github.com/hai2007/datapool/issues" class="link">去这里</a>
+        给我们留言~
+    </p>
     <h2 id='fixed-xAxis'>
         xAxis
     </h2>
@@ -157,5 +179,17 @@
     </h3>
     <p>
         可选，表示数据刻度上的刻度，默认内部会根据数据自动计算。
+    </p>
+    <h2 id='fixed-tree'>
+        tree
+    </h2>
+    <p>
+        树图"tree"独有的配置项。
+    </p>
+    <h3 id='fixed-tree.direction'>
+        direction
+    </h3>
+    <p>
+        字符串类型，表示树图的方向，默认"TB"表示从上往下的树，还有："LR"、"RL"、"BT"和"circle"。
     </p>
 </template>

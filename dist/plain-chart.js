@@ -4,12 +4,12 @@
  *
  * author 你好2007 < https://hai2007.gitee.io/sweethome >
  *
- * version 1.0.1
+ * version 1.0.2
  *
  * Copyright (c) 2021 hai2007 走一步，再走一步。
  * Released under the MIT license
  *
- * Date:Mon Nov 15 2021 10:26:43 GMT+0800 (中国标准时间)
+ * Date:Tue Nov 16 2021 14:59:33 GMT+0800 (中国标准时间)
  */
 (function () {
   'use strict';
@@ -30,6 +30,18 @@
     return _typeof(obj);
   }
 
+  function _toConsumableArray(arr) {
+    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+  }
+
+  function _arrayWithoutHoles(arr) {
+    if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+  }
+
+  function _iterableToArray(iter) {
+    if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+  }
+
   function _unsupportedIterableToArray(o, minLen) {
     if (!o) return;
     if (typeof o === "string") return _arrayLikeToArray(o, minLen);
@@ -45,6 +57,10 @@
     for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
 
     return arr2;
+  }
+
+  function _nonIterableSpread() {
+    throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }
 
   function _createForOfIteratorHelper(o, allowArrayLike) {
@@ -104,7 +120,7 @@
     };
   }
 
-  var image = [{"name":"group","attrs":{"c-for":"(option,order) in options"},"children":[{"name":"text","attrs":{"c-if":"option.title",":x":"option.grid.x+option.title.x",":y":"option.grid.y+option.title.y",":content":"option.title.value",":fill-color":"option.title.color",":font-size":"option.title[\"font-size\"]",":align":"option.title.align",":baseline":"option.title.baseline"},"children":[]},{"name":"ruler","attrs":{"c-if":"option.xAxis",":x":"option.grid.x+option.grid.left",":y":"option.grid.y+option.grid.height-option.grid.bottom",":length":"option.grid.width-option.grid.left-option.grid.right","direction":"LR","mark-direction":"right","value-position":"between",":value":"option.xAxis.values"},"children":[]},{"name":"ruler","attrs":{"c-if":"option.yAxis",":x":"option.grid.x+option.grid.left",":y":"option.grid.y+option.grid.height-option.grid.bottom",":length":"option.grid.height-option.grid.top-option.grid.bottom","direction":"BT","mark-direction":"left","value-position":"mark",":value":"option.yAxis.values"},"children":[]},{"name":"plain-chart-bar","attrs":{"c-if":"option.type==\"bar\"",":order":"order",":x":"option.grid.x+option.grid.left",":y":"option.grid.y+option.grid.height-option.grid.bottom",":width":"option.grid.width-option.grid.left-option.grid.right",":height":"option.grid.height-option.grid.top-option.grid.bottom",":data":"option.series"},"children":[]},{"name":"plain-chart-line","attrs":{"c-if":"option.type==\"line\"",":order":"order",":x":"option.grid.x+option.grid.left",":y":"option.grid.y+option.grid.height-option.grid.bottom",":width":"option.grid.width-option.grid.left-option.grid.right",":height":"option.grid.height-option.grid.top-option.grid.bottom",":data":"option.series"},"children":[]},{"name":"plain-chart-pie","attrs":{"c-if":"option.type==\"pie\" || option.type==\"ring\"",":order":"order",":cx":"option.grid.x+option.grid.left+(option.grid.width-option.grid.left-option.grid.right)*0.5",":cy":"option.grid.y+option.grid.top+(option.grid.height-option.grid.top-option.grid.bottom)*0.5",":radius":"option.grid.x+(option.grid.width-option.grid.left-option.grid.right)*0.5\n            >\n            option.grid.y+(option.grid.height-option.grid.top-option.grid.bottom)*0.5\n            ?\n            option.grid.y+(option.grid.height-option.grid.top-option.grid.bottom)*0.5\n            :\n            option.grid.x+(option.grid.width-option.grid.left-option.grid.right)*0.5",":values":"option.series.values",":type":"option.type"},"children":[]}]}];
+  var image = [{"name":"group","attrs":{"c-for":"(option,order) in options"},"children":[{"name":"text","attrs":{"c-if":"option.title",":x":"option.grid.x+option.title.x",":y":"option.grid.y+option.title.y",":content":"option.title.value",":fill-color":"option.title.color",":font-size":"option.title[\"font-size\"]",":align":"option.title.align",":baseline":"option.title.baseline"},"children":[]},{"name":"ruler","attrs":{"c-if":"option.xAxis",":x":"option.grid.x+option.grid.left",":y":"option.grid.y+option.grid.height-option.grid.bottom",":length":"option.grid.width-option.grid.left-option.grid.right","direction":"LR","mark-direction":"right","value-position":"between",":value":"option.xAxis.values"},"children":[]},{"name":"ruler","attrs":{"c-if":"option.yAxis",":x":"option.grid.x+option.grid.left",":y":"option.grid.y+option.grid.height-option.grid.bottom",":length":"option.grid.height-option.grid.top-option.grid.bottom","direction":"BT","mark-direction":"left","value-position":"mark",":value":"option.yAxis.values"},"children":[]},{"name":"plain-chart-tree","attrs":{"c-if":"option.type==\"tree\"",":order":"order",":cx":"option.grid.x+option.grid.left+(option.grid.width-option.grid.left-option.grid.right)*0.5",":cy":"option.grid.y+option.grid.top+(option.grid.height-option.grid.top-option.grid.bottom)*0.5",":radius":"option.grid.x+(option.grid.width-option.grid.left-option.grid.right)*0.5\n            >\n            option.grid.y+(option.grid.height-option.grid.top-option.grid.bottom)*0.5\n            ?\n            option.grid.y+(option.grid.height-option.grid.top-option.grid.bottom)*0.5\n            :\n            option.grid.x+(option.grid.width-option.grid.left-option.grid.right)*0.5",":x":"option.grid.x+option.grid.left",":y":"option.grid.y+option.grid.bottom",":width":"option.grid.width-option.grid.left-option.grid.right",":height":"option.grid.height-option.grid.top-option.grid.bottom",":data":"option.treeData",":type":"option.treeType"},"children":[]},{"name":"plain-chart-map","attrs":{"c-if":"option.type==\"map\"",":order":"order",":cx":"option.grid.x+option.grid.left+(option.grid.width-option.grid.left-option.grid.right)*0.5",":cy":"option.grid.y+option.grid.top+(option.grid.height-option.grid.top-option.grid.bottom)*0.5",":width":"option.grid.width-option.grid.left-option.grid.right",":height":"option.grid.height-option.grid.top-option.grid.bottom",":geo-json":"option.geo"},"children":[]},{"name":"plain-chart-bar","attrs":{"c-if":"option.type==\"bar\"",":order":"order",":x":"option.grid.x+option.grid.left",":y":"option.grid.y+option.grid.height-option.grid.bottom",":width":"option.grid.width-option.grid.left-option.grid.right",":height":"option.grid.height-option.grid.top-option.grid.bottom",":data":"option.series"},"children":[]},{"name":"plain-chart-line","attrs":{"c-if":"option.type==\"line\"",":order":"order",":x":"option.grid.x+option.grid.left",":y":"option.grid.y+option.grid.height-option.grid.bottom",":width":"option.grid.width-option.grid.left-option.grid.right",":height":"option.grid.height-option.grid.top-option.grid.bottom",":data":"option.series"},"children":[]},{"name":"plain-chart-pie","attrs":{"c-if":"option.type==\"pie\" || option.type==\"ring\"",":order":"order",":cx":"option.grid.x+option.grid.left+(option.grid.width-option.grid.left-option.grid.right)*0.5",":cy":"option.grid.y+option.grid.top+(option.grid.height-option.grid.top-option.grid.bottom)*0.5",":radius":"option.grid.x+(option.grid.width-option.grid.left-option.grid.right)*0.5\n            >\n            option.grid.y+(option.grid.height-option.grid.top-option.grid.bottom)*0.5\n            ?\n            option.grid.y+(option.grid.height-option.grid.top-option.grid.bottom)*0.5\n            :\n            option.grid.x+(option.grid.width-option.grid.left-option.grid.right)*0.5",":values":"option.series.values",":names":"option.series.names",":type":"option.type"},"children":[]}]}];
 
   /**
    * 判断一个值是不是Object。
@@ -158,6 +174,22 @@
     return type === 'string' || type === 'object' && value != null && !Array.isArray(value) && getType(value) === '[object String]';
   }
 
+  /**
+   * 判断一个值是不是Function。
+   *
+   * @param {*} value 需要判断类型的值
+   * @returns {boolean} 如果是Function返回true，否则返回false
+   */
+
+  function _isFunction (value) {
+    if (!_isObject(value)) {
+      return false;
+    }
+
+    var type = getType(value);
+    return type === '[object Function]' || type === '[object AsyncFunction]' || type === '[object GeneratorFunction]' || type === '[object Proxy]';
+  }
+
   /*!
    * 💡 - 值类型判断方法
    * https://github.com/hai2007/tool.js/blob/master/type.js
@@ -172,6 +204,8 @@
   var isObject = _isObject; // 基本类型
   var isNumber = _isNumber;
   var isString = _isString;
+
+  var isFunction = _isFunction;
   var isArray = function isArray(input) {
     return Array.isArray(input);
   };
@@ -223,7 +257,7 @@
     */
 
 
-    if (['bar', 'line', 'pie', 'ring'].indexOf(option.type) > -1) {
+    if (['bar', 'line', 'pie', 'ring', 'map', 'tree'].indexOf(option.type) > -1) {
       formatOption.type = option.type;
     } else {
       formatOption.type = 'none';
@@ -234,9 +268,17 @@
 
 
     var _values = [];
-    var _names = [];
+    var _names = []; // 地图
 
-    if (option.data) {
+    if (['map'].indexOf(formatOption.type) > -1) {
+      formatOption.geo = option.data;
+    } // 树图
+    else if (['tree'].indexOf(formatOption.type) > -1) {
+      formatOption.treeData = option.data;
+      var treeConfig = option.tree || {};
+      formatOption.treeType = treeConfig.direction || "TB";
+    } // 常规数据
+    else if (option.data) {
       if (isNumber(option.data[0])) {
         _values = option.data;
       } else {
@@ -261,7 +303,8 @@
 
 
     formatOption.series = {
-      values: _values
+      values: _values,
+      names: _names
     };
 
     if (['bar', 'line'].indexOf(formatOption.type) > -1) {
@@ -905,6 +948,15 @@
 
   function chart (clunch, $ruler) {
     var options = [];
+
+    clunch.doResizeBack = function () {
+      for (var order in options) {
+        clunch.options[order] = format(options[order], clunch, $ruler);
+      }
+
+      clunch.flag += 1;
+    };
+
     var chartManager = {
       // 创建图表
       "new": function _new(option) {
@@ -913,7 +965,7 @@
         options.push(option);
         setTimeout(function () {
           // 初始化绘图
-          clunch.options.push(format(option, clunch, $ruler));
+          clunch.options[order] = format(option, clunch, $ruler);
           clunch.flag += 1;
         }, 300);
         return {
@@ -1010,7 +1062,7 @@
     };
   }];
 
-  var pie = ['number', 'json', 'string', '$getLoopColors', function ($number, $json, $string, $getLoopColors) {
+  var pie = ['number', 'json', 'string', '$getLoopColors', '$rotate', function ($number, $json, $string, $getLoopColors, $rotate) {
     return {
       attrs: {
         order: $number(),
@@ -1018,7 +1070,8 @@
         cy: $number(),
         radius: $number(),
         type: $string(),
-        values: $json()
+        values: $json(),
+        names: $json()
       },
       region: {
         "default": function _default(render, attr) {
@@ -1070,11 +1123,446 @@
         var beginDeg = Math.PI * -0.5;
 
         for (var index in attr.values) {
-          var deg = attr.values[index] / allValue * Math.PI * 2;
+          var deg = attr.values[index] / allValue * Math.PI * 2; // 绘制弧形
+
           painter.config({
             'fillStyle': colors[index]
           }).fillArc(attr.cx, attr.cy, (attr.type == 'ring' ? 0.5 : 0) * attr.radius, attr.radius, beginDeg, deg);
+
+          if (attr.names.length > 0) {
+            var _painter$beginPath$mo, _painter$beginPath;
+
+            // 绘制提示折线
+            var dot1 = $rotate(attr.cx, attr.cy, beginDeg + deg * 0.5, attr.cx + attr.radius, attr.cy);
+            var dot2 = $rotate(attr.cx, attr.cy, beginDeg + deg * 0.5, attr.cx + attr.radius + 10, attr.cy);
+            var distFlag = dot2[0] > attr.cx ? 1 : -1;
+
+            (_painter$beginPath$mo = (_painter$beginPath = painter.beginPath()).moveTo.apply(_painter$beginPath, _toConsumableArray(dot1))).lineTo.apply(_painter$beginPath$mo, _toConsumableArray(dot2)).lineTo(dot2[0] + distFlag * 10, dot2[1]).stroke();
+
+            painter.config({
+              textAlign: distFlag > 0 ? "left" : "right"
+            }).fillText(attr.names[index], dot2[0] + distFlag * 15, dot2[1]);
+          }
+
           beginDeg += deg;
+        }
+      }
+    };
+  }];
+
+  function calcFeatureCollection(data) {
+    var temp = calcFeature(data.features[0]),
+        minX = temp.minX,
+        maxX = temp.maxX,
+        minY = temp.minY,
+        maxY = temp.maxY,
+        centers = [[(temp.maxX + temp.minX) * 0.5, (temp.maxY + temp.minY) * 0.5]],
+        i;
+
+    for (i = 1; i < data.features.length; i++) {
+      temp = calcFeature(data.features[i]);
+      if (temp.minX < minX) minX = temp.minX;
+      if (temp.maxX > maxX) maxX = temp.maxX;
+      if (temp.minY < minY) minY = temp.minY;
+      if (temp.maxY > maxY) maxY = temp.maxY;
+      centers.push([(temp.maxX + temp.minX) * 0.5, (temp.maxY + temp.minY) * 0.5]);
+    }
+
+    return {
+      minX: minX,
+      maxX: maxX,
+      minY: minY,
+      maxY: maxY,
+      centers: centers
+    };
+  } // 计算边界值
+  // 自动区分区域类型
+
+
+  function calcFeature(data) {
+    if (data.geometry.type == 'Polygon') {
+      return calcPolygon(data.geometry.coordinates);
+    } else {
+      return calcMultiPolygon(data.geometry.coordinates);
+    }
+  } // 获取多区域的统一边界值
+
+
+  function calcMultiPolygon(data) {
+    var minX = data[0][0][0][0],
+        maxX = data[0][0][0][0],
+        minY = data[0][0][0][1],
+        maxY = data[0][0][0][1],
+        i,
+        temp;
+
+    for (i = 0; i < data.length; i++) {
+      temp = calcPolygon(data[i]);
+      if (temp.minX < minX) minX = temp.minX;
+      if (temp.maxX > maxX) maxX = temp.maxX;
+      if (temp.minY < minY) minY = temp.minY;
+      if (temp.maxY > maxY) maxY = temp.maxY;
+    }
+
+    return {
+      minX: minX,
+      maxX: maxX,
+      minY: minY,
+      maxY: maxY
+    };
+  } // 获取坐标的最值
+
+
+  function calcPolygon(data) {
+    var minX = data[0][0][0],
+        maxX = data[0][0][0],
+        minY = data[0][0][1],
+        maxY = data[0][0][1],
+        i,
+        j;
+
+    for (i = 0; i < data.length; i++) {
+      for (j = 0; j < data[i].length; j++) {
+        if (minX > data[i][j][0]) minX = data[i][j][0];else if (maxX < data[i][j][0]) maxX = data[i][j][0];
+        if (minY > data[i][j][1]) minY = data[i][j][1];else if (maxY < data[i][j][1]) maxY = data[i][j][1];
+      }
+    }
+
+    return {
+      minX: minX,
+      maxX: maxX,
+      minY: minY,
+      maxY: maxY
+    };
+  }
+
+  function getCenter (data) {
+    var temp;
+
+    if (data.type == 'FeatureCollection') {
+      temp = calcFeatureCollection(data);
+    } else if (data.type == 'Feature') {
+      temp = calcFeature(data);
+    } else {
+      throw new Error('Type error!' + JSON.stringify({
+        "function": "getCenter",
+        type: data.type
+      }));
+    }
+
+    return [(temp.maxX + temp.minX) * 0.5, (temp.maxY + temp.minY) * 0.5, temp.maxX - temp.minX, temp.maxY - temp.minY, temp.centers];
+  }
+
+  /**
+   * 地图
+  */
+  // type='Polygon'
+
+  var drawPolygon = function drawPolygon(map, painter, data, cx, cy, type) {
+    var i, dxy; // 绘制区域
+
+    painter.beginPath();
+
+    for (i = 0; i < data.length; i++) {
+      dxy = map(data[i][0], data[i][1]);
+      painter.lineTo(cx + dxy[0], cy + dxy[1]);
+    }
+
+    painter.closePath()[type]();
+  }; // type='MultiPolygon | Polygon'
+
+
+  var drawMultiPolygon = function drawMultiPolygon(map, painter, data, cx, cy, type) {
+    var i, j;
+
+    if (data.type == 'Polygon') {
+      for (i = 0; i < data.coordinates.length; i++) {
+        drawPolygon(map, painter, data.coordinates[i], cx, cy, type);
+      }
+    } else {
+      for (i = 0; i < data.coordinates.length; i++) {
+        for (j = 0; j < data.coordinates[i].length; j++) {
+          drawPolygon(map, painter, data.coordinates[i][j], cx, cy, type);
+        }
+      }
+    }
+  };
+
+  var getMapFun = function getMapFun($map, attr) {
+    return $map({
+      scale: attr.scale,
+      center: attr.center,
+      type: "eoap"
+    });
+  };
+
+  var initConfig = function initConfig(attr, that) {
+    var center = getCenter(attr['geo-json']);
+    if (attr.center == null) attr.center = [center[0], center[1]];
+    if (attr.cx == -1) attr.cx = that._width * 0.5;
+    if (attr.cy == -1) attr.cy = that._height * 0.5;
+    if (attr.width == -1) attr.width = that._width;
+    if (attr.height == -1) attr.height = that._height;
+
+    if (attr.scale == null) {
+      var xScale = 0.5 * attr.width / center[2];
+      var yScale = 0.5 * attr.height / center[3]; // 选择缩放最小的
+
+      attr.scale = xScale < yScale ? xScale : yScale;
+    }
+
+    return center[4];
+  };
+
+  var map = ["number", "json", "string", "$map", "color", function ($number, $json, $string, $map, $color) {
+    return {
+      attrs: {
+        order: $number(),
+        'fill-color': $color('#5470c6'),
+        'stroke-color': $color('white'),
+        'font-color': $color('white'),
+        type: $string('full'),
+        cx: $number(),
+        cy: $number(),
+        width: $number(),
+        height: $number(),
+        // 地图缩放比例
+        scale: $number(null),
+        // 地图中心
+        center: $json(null),
+        // 区域地图数据
+        'geo-json': $json()
+      },
+      region: {
+        "default": function _default(render, attr) {
+          var map = getMapFun($map, attr),
+              i;
+
+          if (attr['geo-json'].type == 'FeatureCollection') {
+            for (i = 0; i < attr['geo-json'].features.length; i++) {
+              // 绘制
+              drawMultiPolygon(map, render(i, {
+                geo: attr['geo-json'].features[i],
+                order: attr.order
+              }).config({
+                "lineWidth": 1,
+                "lineDash": []
+              }), attr['geo-json'].features[i].geometry, attr.cx, attr.cy, attr.type);
+            }
+          } else if (attr['geo-json'].type == 'Feature') {
+            // 绘制
+            drawMultiPolygon(map, render().config({
+              "lineWidth": 1,
+              "lineDash": []
+            }), attr['geo-json'].geometry, attr.cx, attr.cy, attr.type);
+          }
+        }
+      },
+      link: function link(painter, attr) {
+        var centers = initConfig(attr, this);
+        var map = getMapFun($map, attr); // 绘制前，设置画笔
+
+        painter.config({
+          "fillStyle": attr['fill-color'],
+          "strokeStyle": attr['stroke-color'],
+          "lineWidth": 1,
+          "lineDash": []
+        });
+        var type = attr.type,
+            i,
+            textPosition;
+
+        if (attr['geo-json'].type == 'FeatureCollection') {
+          for (i = 0; i < attr['geo-json'].features.length; i++) {
+            // 如果颜色是函数
+            if (isFunction(attr['fill-color'])) painter.config('fillStyle', attr['fill-color'].call(this, attr['geo-json'].features[i].properties, i));
+            if (isFunction(attr['stroke-color'])) painter.config('strokeStyle', attr['stroke-color'].call(this, attr['geo-json'].features[i].properties, i)); // 绘制
+
+            drawMultiPolygon(map, painter, attr['geo-json'].features[i].geometry, attr.cx, attr.cy, type);
+          }
+        } else if (attr['geo-json'].type == 'Feature') {
+          // 如果颜色是函数
+          if (isFunction(attr['fill-color'])) painter.config('fillStyle', attr['fill-color'].call(this, attr['geo-json'].properties, 0));
+          if (isFunction(attr['stroke-color'])) painter.config('strokeStyle', attr['stroke-color'].call(this, attr['geo-json'].properties, 0)); // 绘制
+
+          drawMultiPolygon(map, painter, attr['geo-json'].geometry, attr.cx, attr.cy, type);
+        }
+
+        painter.config({
+          textAlign: "center",
+          textBaseline: "middle",
+          "font-size": 10,
+          "fillStyle": attr['font-color']
+        }); // 绘制文字
+
+        if (attr['geo-json'].type == 'FeatureCollection') {
+          for (i = 0; i < attr['geo-json'].features.length; i++) {
+            if ('cp' in attr['geo-json'].features[i].properties) {
+              textPosition = map(attr['geo-json'].features[i].properties.cp[0], attr['geo-json'].features[i].properties.cp[1]);
+            } else {
+              textPosition = map(centers[i][0], centers[i][1]);
+            }
+
+            painter.fillText(attr['geo-json'].features[i].properties.name, attr.cx + textPosition[0], attr.cy + textPosition[1]);
+          }
+        } else if (attr['geo-json'].type == 'Feature') {
+          painter.fillText(attr['geo-json'].properties.name, attr.cx, attr.cy);
+        }
+      }
+    };
+  }];
+
+  /**
+   * 树图
+   */
+  var initConfig$1 = function initConfig(attr) {
+    // 数据格式
+    var format = attr.format;
+
+    if ('root' in format) ; else format.root = function (initTree) {
+      return initTree;
+    };
+
+    if ('id' in format) ; else format.id = function (treedata) {
+      return treedata.name;
+    };
+
+    if ('child' in format) ; else format.child = function (parentTree) {
+      return parentTree.children;
+    };
+  };
+
+  var tree = ["number", "json", "string", "$tree", "$move", function ($number, $json, $string, $tree, $move) {
+    return {
+      attrs: {
+        order: $number(),
+        x: $number(),
+        y: $number(),
+        data: $json(),
+        format: $json({}),
+        // 默认内置一种格式，对于不符合默认格式的，可以通过配置来认识
+        type: $string(),
+        width: $number(),
+        height: $number(),
+        cx: $number(),
+        cy: $number(),
+        radius: $number(),
+        "begin-deg": $number(0),
+        deg: $number(Math.PI * 2)
+      },
+      region: {
+        "default": function _default(render, attr) {
+          var treeData = $tree({
+            // 配置数据结构
+            root: attr.format.root,
+            id: attr.format.id,
+            child: attr.format.child,
+            // 配置树图结构
+            type: attr.type,
+            width: attr.width,
+            height: attr.height,
+            cx: attr.cx - attr.x,
+            cy: attr.cy - attr.y,
+            radius: attr.radius,
+            "begin-deg": attr['begin-deg'],
+            deg: attr.deg
+          })(attr.data);
+
+          for (var key in treeData.node) {
+            render(key, {
+              order: attr.order,
+              node: treeData.node[key]
+            }).fullCircle(attr.x + treeData.node[key].left, attr.y + treeData.node[key].top, 3);
+          }
+        }
+      },
+      link: function link(painter, attr) {
+        initConfig$1(attr);
+
+        var key, position, _position, pPosition, pid, deepDis;
+
+        var treeData = $tree({
+          // 配置数据结构
+          root: attr.format.root,
+          id: attr.format.id,
+          child: attr.format.child,
+          // 配置树图结构
+          type: attr.type,
+          width: attr.width,
+          height: attr.height,
+          cx: attr.cx - attr.x,
+          cy: attr.cy - attr.y,
+          radius: attr.radius,
+          "begin-deg": attr['begin-deg'],
+          deg: attr.deg
+        })(attr.data); // 先绘制连接线
+
+        painter.config({
+          strokeStyle: 'gray'
+        });
+
+        for (key in treeData.node) {
+          if (key == treeData.root) ; else {
+            pid = treeData.node[key].pid;
+            pPosition = [attr.x + treeData.node[pid].left, attr.y + treeData.node[pid].top];
+            position = [attr.x + treeData.node[key].left, attr.y + treeData.node[key].top];
+            painter.beginPath().moveTo(pPosition[0], pPosition[1]);
+
+            if (attr.type == 'TB' || attr.type == 'BT') {
+              deepDis = (position[1] - pPosition[1]) * 0.3;
+              painter.bezierCurveTo(pPosition[0], pPosition[1] + deepDis, position[0], position[1] - deepDis, position[0], position[1]);
+            } else if (attr.type == 'LR' || attr.type == 'RL') {
+              deepDis = (position[0] - pPosition[0]) * 0.3;
+              painter.bezierCurveTo(pPosition[0] + deepDis, pPosition[1], position[0] - deepDis, position[1], position[0], position[1]);
+            } // 否则默认直接连接
+            else {
+              painter.lineTo(position[0], position[1]);
+            }
+
+            painter.stroke();
+          }
+        } // 再绘制文字
+
+
+        painter.config({
+          fillStyle: '#000',
+          'font-size': 10,
+          textBaseline: 'middle'
+        });
+
+        for (key in treeData.node) {
+          position = [attr.x + treeData.node[key].left, attr.y + treeData.node[key].top];
+
+          if (key == treeData.root) {
+            if (attr.type == 'LR') {
+              painter.config('textAlign', 'right').fillText(key, position[0] - 5, position[1]);
+            } else {
+              painter.config('textAlign', 'left').fillText(key, position[0] + 5, position[1]);
+            }
+          } else {
+            if (attr.type == 'LR') {
+              painter.config('textAlign', 'left').fillText(key, position[0] + 5, position[1]);
+            } else if (attr.type == 'RL') {
+              painter.config('textAlign', 'right').fillText(key, position[0] - 5, position[1]);
+            } else if (attr.type == 'TB') {
+              painter.config('textAlign', 'left').fillText(key, position[0], position[1] + 5, Math.PI * 0.5);
+            } else if (attr.type == 'BT') {
+              painter.config('textAlign', 'left').fillText(key, position[0], position[1] - 5, -Math.PI * 0.5);
+            } else if (attr.type == 'circle') {
+              _position = $move(position[0] - attr.cx, position[1] - 5 - attr.cy, 5, position[0], position[1] - 5);
+              painter.fillText(key, _position[0], _position[1], treeData.node[key].deg);
+            }
+          }
+        } // 最后绘制结点
+
+
+        painter.config({
+          fillStyle: 'white',
+          strokeStyle: 'red'
+        });
+
+        for (key in treeData.node) {
+          painter.fullCircle(attr.x + treeData.node[key].left, attr.y + treeData.node[key].top, 3);
         }
       }
     };
@@ -1083,7 +1571,9 @@
   var serieslist = {
     'plain-chart-bar': bar,
     'plain-chart-line': line,
-    'plain-chart-pie': pie
+    'plain-chart-pie': pie,
+    'plain-chart-map': map,
+    'plain-chart-tree': tree
   };
   var server = {};
   var options = {
@@ -1097,7 +1587,10 @@
         options: [],
         flag: 0
       };
-    }]
+    }],
+    resized: function resized() {
+      this.doResizeBack();
+    }
   }; // 为跨端提供
 
   var PlainChart = function PlainChart(init) {

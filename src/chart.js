@@ -6,6 +6,13 @@ export default function (clunch, $ruler) {
 
     let options = [];
 
+    clunch.doResizeBack = () => {
+        for (let order in options) {
+            clunch.options[order] = format(options[order], clunch, $ruler);
+        }
+        clunch.flag += 1;
+    };
+
     let chartManager = {
 
         // 创建图表
@@ -18,7 +25,7 @@ export default function (clunch, $ruler) {
             setTimeout(() => {
 
                 // 初始化绘图
-                clunch.options.push(format(option, clunch, $ruler));
+                clunch.options[order] = format(option, clunch, $ruler);
                 clunch.flag += 1;
 
             }, 300);

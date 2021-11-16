@@ -47,7 +47,7 @@ export default function (option, clunch, $ruler) {
     /**
      * 【3】type
     */
-    if (['bar', 'line', 'pie', 'ring'].indexOf(option.type) > -1) {
+    if (['bar', 'line', 'pie', 'ring', 'map', 'tree'].indexOf(option.type) > -1) {
         formatOption.type = option.type;
     } else {
         formatOption.type = 'none';
@@ -58,7 +58,22 @@ export default function (option, clunch, $ruler) {
     */
     let _values = [];
     let _names = [];
-    if (option.data) {
+
+    // 地图
+    if (['map'].indexOf(formatOption.type) > -1) {
+        formatOption.geo = option.data;
+    }
+
+    // 树图
+    else if (['tree'].indexOf(formatOption.type) > -1) {
+        formatOption.treeData = option.data;
+
+        let treeConfig = option.tree || {};
+        formatOption.treeType = treeConfig.direction || "TB";
+    }
+
+    // 常规数据
+    else if (option.data) {
         if (isNumber(option.data[0])) {
             _values = option.data;
         } else {
@@ -71,7 +86,8 @@ export default function (option, clunch, $ruler) {
 
     // 图形数据
     formatOption.series = {
-        values: _values
+        values: _values,
+        names: _names
     };
 
     if (['bar', 'line'].indexOf(formatOption.type) > -1) {
