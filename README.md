@@ -36,7 +36,7 @@ import PlainChart from 'plain-chart';
 <script src='https://cdn.jsdelivr.net/npm/plain-chart@1'></script>
 ```
 
-我们以绘制下面的一个柱状图为了来演示：
+我们以绘制下面的一个柱状图为例来演示：
 
 <img src='./docs/image/bar_simple.png' />
 
@@ -74,7 +74,7 @@ myChart.new({
 
 如果你想查看上面例子的在线效果，可以直接访问： https://hai2007.gitee.io/sweethome/#/editor?file=plain-chart_bar_simple
 
-当然，你还可以设置柱状图的更多细节或者是绘制别的图形，当然，也可以添加交互事件等。
+你还可以设置柱状图的更多细节或者是绘制别的图形，当然，添加交互事件等也是可以的。
 
 具体的使用你可以[查阅文档](https://clunch-contrib.github.io/chart/)哦~
 
