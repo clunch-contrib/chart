@@ -281,12 +281,12 @@
         }
 
         [open='yes']:before {
-            background-image: url('../../assets/open.png');
+            background-image: url('./image/open.png');
         }
 
         [open='no'] {
             &:before {
-                background-image: url('../../assets/close.png');
+                background-image: url('./image/close.png');
             }
 
             &+ul {

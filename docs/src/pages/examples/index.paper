@@ -185,51 +185,51 @@
                     }
 
                     &.line {
-                        background-image: url('../../assets/line.svg');
+                        background-image: url('./image/line.svg');
                     }
 
                     &.bar {
-                        background-image: url('../../assets/bar.svg');
+                        background-image: url('./image/bar.svg');
                     }
 
                     &.pie {
-                        background-image: url('../../assets/pie.svg');
+                        background-image: url('./image/pie.svg');
                     }
 
                     &.scatter {
-                        background-image: url('../../assets/scatter.svg');
+                        background-image: url('./image/scatter.svg');
                     }
 
                     &.map {
-                        background-image: url('../../assets/map.svg');
+                        background-image: url('./image/map.svg');
                     }
 
                     &.candlestick {
-                        background-image: url('../../assets/candlestick.svg');
+                        background-image: url('./image/candlestick.svg');
                     }
 
                     &.radar {
-                        background-image: url('../../assets/radar.svg');
+                        background-image: url('./image/radar.svg');
                     }
 
                     &.tree {
-                        background-image: url('../../assets/tree.svg');
+                        background-image: url('./image/tree.svg');
                     }
 
                     &.sankey {
-                        background-image: url('../../assets/sankey.svg');
+                        background-image: url('./image/sankey.svg');
                     }
 
                     &.gauge {
-                        background-image: url('../../assets/gauge.svg');
+                        background-image: url('./image/gauge.svg');
                     }
 
                     &.zoom {
-                        background-image: url('../../assets/zoom.svg');
+                        background-image: url('./image/zoom.svg');
                     }
 
                     &.drag {
-                        background-image: url('../../assets/drag.svg');
+                        background-image: url('./image/drag.svg');
                     }
                 }
             }
@@ -270,47 +270,47 @@
                         cursor: pointer;
 
                         &.line_simple {
-                            background-image: url('../../assets/line_simple.png');
+                            background-image: url('./image/line_simple.png');
                         }
 
                         &.bar_simple {
-                            background-image: url('../../assets/bar_simple.png');
+                            background-image: url('./image/bar_simple.png');
                         }
 
                         &.pie_simple {
-                            background-image: url('../../assets/pie_simple.png');
+                            background-image: url('./image/pie_simple.png');
                         }
 
                         &.ring_simple {
-                            background-image: url('../../assets/ring_simple.png');
+                            background-image: url('./image/ring_simple.png');
                         }
 
                         &.ring_text {
-                            background-image: url('../../assets/ring_text.png');
+                            background-image: url('./image/ring_text.png');
                         }
 
                         &.tree_circle {
-                            background-image: url('../../assets/tree_circle.png');
+                            background-image: url('./image/tree_circle.png');
                         }
 
                         &.tree_TB {
-                            background-image: url('../../assets/tree_TB.png');
+                            background-image: url('./image/tree_TB.png');
                         }
 
                         &.tree_BT {
-                            background-image: url('../../assets/tree_BT.png');
+                            background-image: url('./image/tree_BT.png');
                         }
 
                         &.tree_LR {
-                            background-image: url('../../assets/tree_LR.png');
+                            background-image: url('./image/tree_LR.png');
                         }
 
                         &.tree_RL {
-                            background-image: url('../../assets/tree_RL.png');
+                            background-image: url('./image/tree_RL.png');
                         }
 
                         &.map_china {
-                            background-image: url('../../assets/map_china.png');
+                            background-image: url('./image/map_china.png');
                         }
                     }
                 }
