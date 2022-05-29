@@ -33,7 +33,7 @@ import PlainChart from 'plain-chart';
 或
 
 ```html
-<script src='https://cdn.jsdelivr.net/npm/plain-chart@1'></script>
+<script src='https://unpkg.com/plain-chart@1'></script>
 ```
 
 我们以绘制下面的一个柱状图为例来演示：

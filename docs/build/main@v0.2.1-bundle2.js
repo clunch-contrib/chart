@@ -42,9 +42,9 @@ var qMenuBtn =__etcpack__scope_args__.default;
 
 
     let pages = {
-        start: () => window.__etcpack__getLazyBundle('./build/main@v0.2.0-bundle4.js','38'),
-        new: () => window.__etcpack__getLazyBundle('./build/main@v0.2.0-bundle5.js','39'),
-        options: () => window.__etcpack__getLazyBundle('./build/main@v0.2.0-bundle6.js','40')
+        start: () => window.__etcpack__getLazyBundle('./build/main@v0.2.1-bundle4.js','38'),
+        new: () => window.__etcpack__getLazyBundle('./build/main@v0.2.1-bundle5.js','39'),
+        options: () => window.__etcpack__getLazyBundle('./build/main@v0.2.1-bundle6.js','40')
     };
 
     __etcpack__scope_bundle__.default= {

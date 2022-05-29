@@ -43,7 +43,7 @@ var fixedScroll =__etcpack__scope_args__.default;
         },
         methods: {
             openExample(pagename) {
-                this.loadPage("https://hai2007.gitee.io/sweethome/#/editor?file=plain-chart_" + pagename);
+                this.loadPage("https://hai2007.github.io/SweetHome/#/editor?file=plain-chart_" + pagename);
             },
             doScroll(fixedName) {
                 window.location.href = "#/examples?fixed=" + fixedName;
