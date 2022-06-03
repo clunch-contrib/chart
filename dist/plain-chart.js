@@ -2,14 +2,14 @@
  * plain-chart - 一个比 Apache ECharts 更简单的开源可视化图表库
  * git+https://github.com/clunch-contrib/chart.git
  *
- * author 你好2007 < https://hai2007.gitee.io/sweethome >
+ * author 你好2007 < https://hai2007.github.io/SweetHome >
  *
  * version 1.0.2
  *
- * Copyright (c) 2021 hai2007 走一步，再走一步。
+ * Copyright (c) 2021-2022 hai2007 走一步，再走一步。
  * Released under the MIT license
  *
- * Date:Tue Nov 16 2021 14:59:33 GMT+0800 (中国标准时间)
+ * Date:Mon May 30 2022 19:58:00 GMT+0800 (GMT+08:00)
  */
 (function () {
   'use strict';
@@ -904,7 +904,7 @@
   }; // 设置
 
   var setValue = function setValue(target, express, value, scope) {
-    if (arguments.length < 3) scope = {};
+    if (arguments.length < 4) scope = {};
     var expressArray = analyseExpress(target, express, scope);
     var path = toPath(target, expressArray, scope);
     var _target = target;

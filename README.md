@@ -3,7 +3,6 @@
 
 <p>
   <a href="https://hai2007.gitee.io/npm-downloads?interval=7&packages=plain-chart"><img src="https://img.shields.io/npm/dm/plain-chart.svg" alt="downloads"></a>
-   <a href="https://www.jsdelivr.com/package/npm/plain-chart"><img src="https://data.jsdelivr.com/v1/package/npm/plain-chart/badge" alt="CDN"></a>
   <a href="https://www.npmjs.com/package/plain-chart"><img src="https://img.shields.io/npm/v/plain-chart.svg" alt="Version"></a>
   <a href="https://github.com/clunch-contrib/chart/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/plain-chart.svg" alt="License"></a>
   <a href="https://github.com/clunch-contrib/chart">
@@ -22,7 +21,7 @@
 npm install --save plain-chart clunch
 ```
 
->（温馨提示：本项目的运行依赖[clunch框架](https://hai2007.gitee.io/clunch/)，所以也需要安装。 ）
+>（温馨提示：本项目的运行依赖[clunch框架](https://hai2007.github.io/clunch/)，所以也需要安装。 ）
 
 安装好了以后，直接引入即可使用：
 
@@ -72,7 +71,7 @@ myChart.new({
 });
 ```
 
-如果你想查看上面例子的在线效果，可以直接访问： https://hai2007.gitee.io/sweethome/#/editor?file=plain-chart_bar_simple
+如果你想查看上面例子的在线效果，可以直接访问： https://hai2007.github.io/SweetHome/#/editor?file=plain-chart_bar_simple
 
 你还可以设置柱状图的更多细节或者是绘制别的图形，当然，添加交互事件等也是可以的。
 
@@ -82,4 +81,4 @@ myChart.new({
 ---------------------------------------
 [MIT](https://github.com/clunch-contrib/chart/blob/master/LICENSE)
 
-Copyright (c) 2021 [hai2007](https://hai2007.gitee.io/sweethome/) 走一步，再走一步。
+Copyright (c) 2021-2022 [hai2007](https://hai2007.github.io/SweetHome/) 走一步，再走一步。
